@@ -1,0 +1,63 @@
+#服务器配置
+server:
+  undertow:
+    # 线程配置
+    threads:
+      # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+      io: 16
+      # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+      worker: 400
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    buffer-size: 1024
+    # 是否分配的直接内存
+    direct-buffers: true
+  servlet:
+    # 编码配置
+    encoding:
+      charset: UTF-8
+      force: true
+
+#spring配置
+spring:
+  task:
+    execution:
+      # 线程名前缀
+      thread-name-prefix: BladeAsync-
+      # 线程池配置
+      pool:
+        # 核心线程数
+        core-size: 5
+        # 最大线程数
+        max-size: 10
+        # 队列容量
+        queue-capacity: 25
+        # 允许核心线程超时
+        allow-core-thread-timeout: true
+        # 线程保持存活时间
+        keep-alive: 60s
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  devtools:
+    restart:
+      log-condition-evaluation-delta: false
+
+blade:
+  request:
+    enabled: true
+    # 全局允许的请求方法
+    allow-methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - PATCH
+      - HEAD
+      - OPTIONS

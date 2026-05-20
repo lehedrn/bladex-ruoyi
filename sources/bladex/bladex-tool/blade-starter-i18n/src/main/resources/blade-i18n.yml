@@ -1,0 +1,25 @@
+blade:
+  i18n:
+    # 是否启用i18n
+    enabled: true
+    # 默认locale
+    default-locale: zh_CN
+    # 支持的locales
+    support-locales:
+      - zh_CN      # 简体中文（中国）
+      - zh_TW      # 繁体中文（台湾省）
+      - en_US      # 英语（美国）
+      - en_GB      # 英语（英国）
+      - fr_FR      # 法语（法国）
+      - de_DE      # 德语（德国）
+      - ru_RU      # 俄语（俄罗斯）
+      - it_IT      # 意语（意大利）
+    # 消息源配置
+    message-source:
+      # 配置
+      base-names:
+        - i18n/errors
+        - i18n/messages
+      # 编码
+      encoding: UTF-8
+

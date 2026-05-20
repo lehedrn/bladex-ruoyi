@@ -1,0 +1,11 @@
+blade:
+  mybatis-plus:
+    encrypt:
+      # 是否启用加密功能
+      enabled: true
+      # 滑动窗口大小，用于加密字段模糊搜索
+      window-size: 3
+      # 加密算法类型
+      algorithm: sm4
+      # 加密算法密钥，必须配置
+      secret-key: ${BLADE_MYBATIS_PLUS_ENCRYPT_SECRET_KEY:}

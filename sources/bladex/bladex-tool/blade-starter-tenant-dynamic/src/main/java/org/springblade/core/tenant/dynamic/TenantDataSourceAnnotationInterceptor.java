@@ -1,0 +1,67 @@
+/**
+ * BladeX Commercial License Agreement
+ * Copyright (c) 2018-2099, https://bladex.cn. All rights reserved.
+ * <p>
+ * Use of this software is governed by the Commercial License Agreement
+ * obtained after purchasing a license from BladeX.
+ * <p>
+ * 1. This software is for development use only under a valid license
+ * from BladeX.
+ * <p>
+ * 2. Redistribution of this software's source code to any third party
+ * without a commercial license is strictly prohibited.
+ * <p>
+ * 3. Licensees may copyright their own code but cannot use segments
+ * from this software for such purposes. Copyright of this software
+ * remains with BladeX.
+ * <p>
+ * Using this software signifies agreement to this License, and the software
+ * must not be used for illegal purposes.
+ * <p>
+ * THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY. The author is
+ * not liable for any claims arising from secondary or illegal development.
+ * <p>
+ * Author: Chill Zhuang (bladejava@qq.com)
+ */
+package org.springblade.core.tenant.dynamic;
+
+import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
+import org.springblade.core.tenant.TenantUtil;
+import org.springblade.core.tenant.exception.TenantDataSourceException;
+import org.springblade.core.tool.utils.StringUtil;
+import org.springframework.lang.NonNull;
+
+/**
+ * 租户数据源切换拦截器
+ *
+ * @author Chill
+ */
+@Slf4j
+@Setter
+public class TenantDataSourceAnnotationInterceptor implements MethodInterceptor {
+
+	private TenantDataSourceHolder holder;
+
+	@Override
+	public Object invoke(@NonNull MethodInvocation invocation) throws Throwable {
+		String tenantId = TenantUtil.getTenantId();
+		if (StringUtil.isBlank(tenantId)) {
+			throw new TenantDataSourceException("租户数据源切换失败，租户ID不能为空");
+		}
+		try {
+			holder.handleDataSource(tenantId);
+			DynamicDataSourceContextHolder.push(tenantId);
+			return invocation.proceed();
+		} catch (Exception exception) {
+			log.error("租户数据源切换异常", exception);
+			throw new TenantDataSourceException(exception.getMessage());
+		} finally {
+			DynamicDataSourceContextHolder.poll();
+		}
+	}
+
+}

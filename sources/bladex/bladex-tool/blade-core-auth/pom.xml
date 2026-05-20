@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>BladeX-Tool</artifactId>
+        <groupId>org.springblade</groupId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>blade-core-auth</artifactId>
+    <name>${project.artifactId}</name>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <module.name>org.springblade.blade.core.auth</module.name>
+    </properties>
+
+    <modules>
+        <module>blade-core-oauth2</module>
+        <module>blade-core-secure</module>
+        <module>blade-starter-jwt</module>
+        <module>blade-starter-key</module>
+        <module>blade-starter-auth</module>
+        <module>blade-starter-social</module>
+    </modules>
+
+</project>
