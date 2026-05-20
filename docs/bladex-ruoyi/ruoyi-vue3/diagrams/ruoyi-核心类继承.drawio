@@ -1,0 +1,181 @@
+<mxfile host="app.diagrams.net" modified="2026-05-20T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="ruoyi-class-inherit" name="核心类继承图">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Domain 实体分组 -->
+        <mxCell id="10" value="Domain 实体层" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;spacingTop=6;startSize=24;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="600" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="BaseEntity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" parent="10" vertex="1">
+          <mxGeometry x="220" y="34" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="SysUser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="20" y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="SysRole" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="160" y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="SysMenu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="300" y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="SysDept" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="440" y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="SysDictData / SysConfig / SysNotice 等" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="200" y="150" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="LoginUser&lt;span style=&quot;font-size:10px&quot;&gt; (UserDetails)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="200" y="210" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 继承箭头: BaseEntity -> 实体 -->
+        <mxCell id="20" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#6c8ebf;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6c8ebf;dashed=1;" parent="1" source="12" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#6c8ebf;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6c8ebf;dashed=1;" parent="1" source="13" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#6c8ebf;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6c8ebf;dashed=1;" parent="1" source="14" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#6c8ebf;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6c8ebf;dashed=1;" parent="1" source="15" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#6c8ebf;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6c8ebf;dashed=1;" parent="1" source="16" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#6c8ebf;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6c8ebf;dashed=1;" parent="1" source="17" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Security 框架分组 -->
+        <mxCell id="30" value="Spring Security 扩展" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=13;spacingTop=6;startSize=24;" parent="1" vertex="1">
+          <mxGeometry x="40" y="360" width="600" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="OncePerRequestFilter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;fontStyle=1;" parent="30" vertex="1">
+          <mxGeometry x="30" y="34" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="JwtAuthenticationTokenFilter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="30" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="AbstractRoutingDataSource" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;fontStyle=1;" parent="30" vertex="1">
+          <mxGeometry x="240" y="34" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="DynamicDataSource" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="240" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="HandlerInterceptor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;fontStyle=1;" parent="30" vertex="1">
+          <mxGeometry x="450" y="34" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="RepeatSubmitInterceptor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="450" y="90" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="SameUrlDataInterceptor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="450" y="140" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="UserDetailsService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;fontStyle=1;" parent="30" vertex="1">
+          <mxGeometry x="30" y="200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="UserDetailsServiceImpl" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="30" y="240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="CachingConfigurerSupport" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;fontStyle=1;" parent="30" vertex="1">
+          <mxGeometry x="240" y="200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="RedisConfig" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="240" y="240" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 继承箭头: Security -->
+        <mxCell id="50" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#9673a6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#9673a6;dashed=1;" parent="1" source="32" target="31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#9673a6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#9673a6;dashed=1;" parent="1" source="34" target="33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="implements" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#9673a6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#9673a6;dashed=1;" parent="1" source="36" target="35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#9673a6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#9673a6;dashed=1;" parent="1" source="37" target="36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="implements" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#9673a6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#9673a6;dashed=1;" parent="1" source="39" target="38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#9673a6;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#9673a6;dashed=1;" parent="1" source="41" target="40" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Service 接口分组 -->
+        <mxCell id="60" value="Service 接口与实现" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;spacingTop=6;startSize=24;" parent="1" vertex="1">
+          <mxGeometry x="40" y="680" width="600" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="ISysUserService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;fontStyle=1;" parent="60" vertex="1">
+          <mxGeometry x="20" y="34" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="ISysRoleService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;fontStyle=1;" parent="60" vertex="1">
+          <mxGeometry x="170" y="34" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="63" value="ISysMenuService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;fontStyle=1;" parent="60" vertex="1">
+          <mxGeometry x="320" y="34" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="64" value="ISysDeptService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;fontStyle=1;" parent="60" vertex="1">
+          <mxGeometry x="470" y="34" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="65" value="SysUserServiceImpl" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;" parent="60" vertex="1">
+          <mxGeometry x="20" y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="66" value="SysRoleServiceImpl" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;" parent="60" vertex="1">
+          <mxGeometry x="170" y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="67" value="SysMenuServiceImpl" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;" parent="60" vertex="1">
+          <mxGeometry x="320" y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="68" value="SysDeptServiceImpl" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;" parent="60" vertex="1">
+          <mxGeometry x="470" y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Controller 继承 -->
+        <mxCell id="70" value="BaseController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" parent="60" vertex="1">
+          <mxGeometry x="180" y="160" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="SysUserController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="60" vertex="1">
+          <mxGeometry x="20" y="220" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="72" value="SysRoleController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="60" vertex="1">
+          <mxGeometry x="200" y="220" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="73" value="SysMenuController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="60" vertex="1">
+          <mxGeometry x="380" y="220" width="160" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 实现/继承箭头: Service & Controller -->
+        <mxCell id="80" value="implements" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#82b366;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#82b366;dashed=1;" parent="1" source="65" target="61" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="81" value="implements" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#82b366;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#82b366;dashed=1;" parent="1" source="66" target="62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="82" value="implements" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#82b366;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#82b366;dashed=1;" parent="1" source="67" target="63" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="83" value="implements" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#82b366;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#82b366;dashed=1;" parent="1" source="68" target="64" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="84" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#b85450;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#b85450;dashed=1;" parent="1" source="71" target="70" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="85" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#b85450;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#b85450;dashed=1;" parent="1" source="72" target="70" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="86" value="extends" style="endArrow=block;endFill=0;endSize=8;html=1;strokeColor=#b85450;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#b85450;dashed=1;" parent="1" source="73" target="70" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

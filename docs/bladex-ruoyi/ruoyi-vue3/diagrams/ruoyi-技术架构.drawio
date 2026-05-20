@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" modified="2026-05-20T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="ruoyi-architecture" name="技术架构全景图">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 前端层 -->
+        <mxCell id="2" value="前端层" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;spacingTop=6;startSize=28;" parent="1" vertex="1">
+          <mxGeometry x="350" y="40" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Vue 3 SPA (Vite 构建)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="2" vertex="1">
+          <mxGeometry x="20" y="38" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Element Plus UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="2" vertex="1">
+          <mxGeometry x="180" y="38" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Pinia 状态管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;" parent="2" vertex="1">
+          <mxGeometry x="340" y="38" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Web 层 / ruoyi-admin -->
+        <mxCell id="10" value="Web 入口层 — ruoyi-admin" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=14;spacingTop=6;startSize=28;" parent="1" vertex="1">
+          <mxGeometry x="350" y="160" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Controller × 23" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="20" y="38" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="RuoYiApplication" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="180" y="38" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="配置文件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;" parent="10" vertex="1">
+          <mxGeometry x="340" y="38" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 框架层 / ruoyi-framework -->
+        <mxCell id="20" value="框架核心层 — ruoyi-framework" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=14;spacingTop=6;startSize=28;" parent="1" vertex="1">
+          <mxGeometry x="350" y="280" width="500" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Spring Security + JWT 认证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="20" vertex="1">
+          <mxGeometry x="20" y="38" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="AOP 切面 (日志/权限/限流/数据源)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="20" vertex="1">
+          <mxGeometry x="260" y="38" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="MyBatis SqlSessionFactory" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="20" vertex="1">
+          <mxGeometry x="20" y="78" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Redis (会话/缓存/限流)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="20" vertex="1">
+          <mxGeometry x="260" y="78" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="Druid 连接池 (主从分离)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="20" vertex="1">
+          <mxGeometry x="20" y="118" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="MVC 拦截器 (防重复提交)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5a6bd;strokeColor=#9673a6;fontSize=12;" parent="20" vertex="1">
+          <mxGeometry x="260" y="118" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 业务层 -->
+        <mxCell id="30" value="业务模块层 — ruoyi-system / ruoyi-quartz / ruoyi-generator" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=14;spacingTop=6;startSize=28;" parent="1" vertex="1">
+          <mxGeometry x="150" y="460" width="900" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="系统业务 (用户/角色/菜单/部门/字典/配置/通知/日志)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="20" y="38" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="定时任务 (Quartz 调度)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="320" y="38" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="代码生成 (Velocity 模板)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4e1a4;strokeColor=#82b366;fontSize=12;" parent="30" vertex="1">
+          <mxGeometry x="600" y="38" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 基础层 / ruoyi-common -->
+        <mxCell id="40" value="基础工具层 — ruoyi-common" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=14;spacingTop=6;startSize=28;" parent="1" vertex="1">
+          <mxGeometry x="350" y="580" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="注解 / 常量 / 异常 / 工具类" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5c6cb;strokeColor=#b85450;fontSize=12;" parent="40" vertex="1">
+          <mxGeometry x="20" y="38" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="领域模型 / BaseController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5c6cb;strokeColor=#b85450;fontSize=12;" parent="40" vertex="1">
+          <mxGeometry x="260" y="38" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 数据库层 -->
+        <mxCell id="50" value="数据层" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;container=1;fillColor=#e6e6e6;strokeColor=#666666;fontStyle=1;fontSize=14;spacingTop=6;startSize=28;" parent="1" vertex="1">
+          <mxGeometry x="350" y="700" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="MySQL 8.x" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cccccc;strokeColor=#666666;fontSize=12;" parent="50" vertex="1">
+          <mxGeometry x="20" y="38" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="Redis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cccccc;strokeColor=#666666;fontSize=12;" parent="50" vertex="1">
+          <mxGeometry x="260" y="38" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 连接箭头 -->
+        <mxCell id="60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;" parent="1" source="2" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;" parent="1" source="10" target="20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;" parent="1" source="20" target="30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;" parent="1" source="30" target="40" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="64" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;" parent="1" source="40" target="50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 外部调用标注 -->
+        <mxCell id="70" value="← 调用" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=11;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="280" y="190" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="← 调用" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=11;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="280" y="310" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="72" value="← 依赖" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=11;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="280" y="490" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- HTTP/JDBC 标注 -->
+        <mxCell id="80" value="HTTP (JSON)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=11;fontColor=#0066cc;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry x="870" y="190" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="81" value="JDBC / RESP" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=11;fontColor=#0066cc;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry x="870" y="730" width="100" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

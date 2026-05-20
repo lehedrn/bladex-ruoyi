@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net" modified="2026-05-20T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="ruoyi-login-flow" name="登录业务流程图">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 开始 -->
+        <mxCell id="10" value="开始：用户提交登录表单" style="ellipse;whiteSpace=wrap;html=1;fillColor=#99ccff;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="30" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 验证码校验 -->
+        <mxCell id="11" value="验证码校验&lt;br&gt;&lt;span style=&quot;font-size:10px&quot;&gt;validateCaptcha()&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="560" y="120" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="10" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 验证码是否通过？ -->
+        <mxCell id="13" value="验证码正确？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="200" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="11" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 验证码失败 -->
+        <mxCell id="15" value="❌ 抛出 CaptchaExpireException" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="780" y="205" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="否" style="endArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=11;fontColor=#b85450;" parent="1" source="13" target="15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 登录前检查 -->
+        <mxCell id="20" value="登录前检查&lt;br&gt;&lt;span style=&quot;font-size:10px&quot;&gt;loginPreCheck() - IP黑名单/长度&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="560" y="300" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="是" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=11;fontColor=#82b366;" parent="1" source="13" target="20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AuthenticationManager 认证 -->
+        <mxCell id="22" value="AuthenticationManager.authenticate()&lt;br&gt;&lt;span style=&quot;font-size:10px&quot;&gt;UserDetailsServiceImpl.loadUserByUsername()&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="540" y="390" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="20" target="22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 认证是否通过？ -->
+        <mxCell id="24" value="密码匹配成功？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="570" y="470" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="22" target="24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 密码失败 -->
+        <mxCell id="26" value="❌ 密码错误/重试计数+1&lt;br&gt;&lt;span style=&quot;font-size:10px&quot;&gt;UserPasswordNotMatchException&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="780" y="480" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="否" style="endArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=11;fontColor=#b85450;" parent="1" source="24" target="26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 生成 Token -->
+        <mxCell id="30" value="生成 JWT Token&lt;br&gt;&lt;span style=&quot;font-size:10px&quot;&gt;UUID + setUserAgent + Redis存储 + JWT签名&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="540" y="570" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="是" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=11;fontColor=#82b366;" parent="1" source="24" target="30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 异步记录日志 -->
+        <mxCell id="32" value="异步记录登录日志&lt;br&gt;&lt;span style=&quot;font-size:10px&quot;&gt;AsyncManager → sys_logininfor&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="540" y="660" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="30" target="32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 更新登录信息 -->
+        <mxCell id="34" value="更新最后登录IP和时间&lt;br&gt;&lt;span style=&quot;font-size:10px&quot;&gt;updateLoginInfo()&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="540" y="750" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="32" target="34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 返回 Token -->
+        <mxCell id="36" value="✅ 返回 {token: JWT} 给前端" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99ff99;strokeColor=#82b366;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="830" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="endArrow=block;html=1;strokeColor=#333;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="34" target="36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 代码来源标注 -->
+        <mxCell id="40" value="来源: SysLoginController.java:57" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=9;fontColor=#999;" parent="1" vertex="1">
+          <mxGeometry x="30" y="35" width="200" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="来源: SysLoginService.java:63" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=9;fontColor=#999;" parent="1" vertex="1">
+          <mxGeometry x="30" y="125" width="200" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="来源: UserDetailsServiceImpl.java:38" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=9;fontColor=#999;" parent="1" vertex="1">
+          <mxGeometry x="30" y="395" width="220" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="来源: TokenService.java:115" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=9;fontColor=#999;" parent="1" vertex="1">
+          <mxGeometry x="30" y="575" width="180" height="15" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
