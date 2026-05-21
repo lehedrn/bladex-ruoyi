@@ -1,0 +1,159 @@
+<mxfile host="app.diagrams.net" modified="2026-05-20T00:00:00.000Z" agent="BladeX-Tool" version="24.0.0" type="device">
+  <diagram id="core-class-hierarchy" name="核心类继承关系图">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 启动相关 -->
+        <mxCell id="g1" value="启动相关类" style="swimlane;html=1;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="540" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_1" value="LauncherService (接口)" style="shape=interface;fontStyle=1;rounded=0;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_2" value="&quot;+ launcher(builder, appName, profile, isLocalDev)&quot;" style="text;html=1;align=left;valign=top;fontSize=10;fontColor=#666" vertex="1" parent="1">
+          <mxGeometry x="60" y="105" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_3" value="LogLauncherServiceImpl" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="180" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_4" value="SwaggerLauncherServiceImpl" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="270" y="140" width="180" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_5" value="LiteFlowLauncherServiceImpl" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="60" y="185" width="180" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_6" value="Log4j2LauncherServiceImpl" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="270" y="185" width="180" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="g1_7" value="BladeApplication" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="350" y="60" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_8" value="BladeBootAutoConfiguration" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="350" y="110" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g1_9" value="BladePropertySource" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="350" y="160" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 安全认证相关 -->
+        <mxCell id="g2" value="安全认证类" style="swimlane;html=1;startSize=28;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="20" width="540" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_1" value="BladeAuthorizationHandler" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="650" y="60" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_2" value="BladeUserDetailService" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="650" y="110" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_3" value="BladePasswordHandler" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="650" y="160" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_4" value="BladeTokenHandler" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="650" y="210" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_5" value="BladeLockHandler" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="900" y="60" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_6" value="BladePermissionHandler" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="900" y="110" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_7" value="SecureInterceptor" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="900" y="160" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_8" value="CaptchaTokenGranter" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="900" y="210" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="g2_9" value="SmsTokenGranter" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1060" y="210" width="150" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 上下文 & 数据 -->
+        <mxCell id="g3" value="上下文 &amp; 数据类" style="swimlane;html=1;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="540" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="g3_1" value="BladeContext" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="60" y="350" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g3_2" value="BladeRequestConfiguration" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g3_3" value="BladeController (基础 Controller)" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="350" y="350" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g3_4" value="UserController" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="350" y="400" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="g3_5" value="RoleController" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="510" y="400" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="g3_6" value="MenuController" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="350" y="445" width="150" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 缓存 & Service -->
+        <mxCell id="g4" value="缓存 &amp; Service 层" style="swimlane;html=1;startSize=28;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="300" width="540" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="g4_1" value="SysCache" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="650" y="350" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g4_2" value="UserCache" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="650" y="400" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g4_3" value="DictCache" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="650" y="450" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g4_4" value="IUserService (接口)" style="shape=interface;rounded=0;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="850" y="350" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g4_5" value="UserServiceImpl" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="850" y="400" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g4_6" value="UserMapper" style="rounded=1;fillColor=#ffffff;strokeColor=#333;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="850" y="450" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 连接: LauncherService → 实现 -->
+        <mxCell id="r1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g1_3" target="g1_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g1_4" target="g1_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g1_5" target="g1_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g1_6" target="g1_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连接: Controller 继承 -->
+        <mxCell id="r5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g3_4" target="g3_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g3_5" target="g3_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g3_6" target="g3_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 连接: Service → Mapper -->
+        <mxCell id="r8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g4_5" target="g4_4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=block;endFill=0;dashed=1" edge="1" parent="1" source="g4_5" target="g4_6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 代码来源 -->
+        <mxCell id="src" value="代码来源: blade-core-launch/.../LauncherService.java (接口)&#10;bladex-boot/.../auth/ (安全认证类)&#10;bladex-boot/.../system/ (业务 Controller/Service)" style="text;html=1;align=left;valign=top;fontSize=10;fontColor=#999" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="500" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

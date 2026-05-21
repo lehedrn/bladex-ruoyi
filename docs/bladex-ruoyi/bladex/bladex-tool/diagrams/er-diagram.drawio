@@ -1,0 +1,342 @@
+<mxfile host="app.diagrams.net" modified="2026-05-20T00:00:00.000Z" agent="BladeX-Tool" version="24.0.0" type="device">
+  <diagram id="er-diagram" name="数据库ER图">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- blade_tenant -->
+        <mxCell id="tenant" value="blade_tenant" style="swimlane;html=1;startSize=28;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="30" width="220" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant_f1" value="PK  id (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="68" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant_f2" value="    tenant_id (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="90" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant_f3" value="    tenant_name (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="112" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant_f4" value="    package_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="134" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant_f5" value="    expire_time (DATETIME)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="156" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant_f6" value="    license_key (TEXT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="178" width="190" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_tenant_package -->
+        <mxCell id="tpkg" value="blade_tenant_package" style="swimlane;html=1;startSize=28;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tpkg_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="288" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tpkg_f2" value="    package_name (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="310" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tpkg_f3" value="    menu_id (VARCHAR) [逗号分隔]" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="332" width="190" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_user -->
+        <mxCell id="user" value="blade_user" style="swimlane;html=1;startSize=28;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="30" width="240" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="68" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f2" value="FK  tenant_id (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="90" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f3" value="    account (VARCHAR) [唯一]" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="112" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f4" value="    password (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="134" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f5" value="    name / real_name" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="156" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f6" value="    email / phone" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="178" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f7" value="FK   role_id (VARCHAR) [逗号分隔]" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="200" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f8" value="FK   dept_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="222" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="user_f9" value="    is_deleted (TINYINT) [逻辑删除]" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="244" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_role -->
+        <mxCell id="role" value="blade_role" style="swimlane;html=1;startSize=28;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="role_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="378" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="role_f2" value="FK  tenant_id (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="400" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="role_f3" value="    parent_id (BIGINT) [树结构]" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="422" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="role_f4" value="    role_name / role_alias" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="444" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="role_f5" value="    status (INT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="466" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_menu -->
+        <mxCell id="menu" value="blade_menu" style="swimlane;html=1;startSize=28;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="720" y="30" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="menu_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="68" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="menu_f2" value="    parent_id (BIGINT) [树结构]" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="90" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="menu_f3" value="    code (VARCHAR) [唯一]" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="112" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="menu_f4" value="    name / alias / path" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="134" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="menu_f5" value="    category (1=菜单, 2=按钮)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="156" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="menu_f6" value="    component / source" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="178" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_dept -->
+        <mxCell id="dept" value="blade_dept" style="swimlane;html=1;startSize=28;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="720" y="270" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dept_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="308" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dept_f2" value="FK  tenant_id (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="330" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dept_f3" value="    parent_id / ancestors" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="352" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dept_f4" value="    dept_name / full_name" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="374" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dept_f5" value="    leader_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="396" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_role_menu -->
+        <mxCell id="rm" value="blade_role_menu" style="swimlane;html=1;startSize=28;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="30" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="68" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f2" value="FK  role_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="90" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f3" value="FK  menu_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="112" width="170" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_role_scope -->
+        <mxCell id="rs" value="blade_role_scope" style="swimlane;html=1;startSize=28;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="170" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rs_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="208" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rs_f2" value="FK  role_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="230" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rs_f3" value="    scope_category (1=数据,2=API)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="252" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rs_f4" value="FK  scope_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="274" width="170" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_scope_data -->
+        <mxCell id="sd" value="blade_scope_data" style="swimlane;html=1;startSize=28;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="330" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="sd_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="368" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="sd_f2" value="FK  menu_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="390" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="sd_f3" value="    scope_name (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="412" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="sd_f4" value="    scope_field / scope_column" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="434" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="sd_f5" value="    scope_type (INT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="456" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="sd_f6" value="    scope_value (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="1055" y="478" width="170" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_user_dept -->
+        <mxCell id="ud" value="blade_user_dept" style="swimlane;html=1;startSize=28;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="540" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ud_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="578" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ud_f2" value="FK  user_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="600" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ud_f3" value="FK  dept_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="415" y="622" width="170" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_dict -->
+        <mxCell id="dict" value="blade_dict (系统字典)" style="swimlane;html=1;startSize=28;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="720" y="470" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="dict_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="508" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dict_f2" value="    parent_id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="530" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dict_f3" value="    code / dict_key / dict_value" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="552" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dict_f4" value="    sort / status" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="574" width="190" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_dict_biz -->
+        <mxCell id="dictbiz" value="blade_dict_biz (业务字典)" style="swimlane;html=1;startSize=28;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="720" y="630" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="dictbiz_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="668" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dictbiz_f2" value="FK  tenant_id (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="690" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dictbiz_f3" value="    code / dict_key / dict_value" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="712" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="dictbiz_f4" value="    sort / status" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="735" y="734" width="190" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- blade_client -->
+        <mxCell id="client" value="blade_client" style="swimlane;html=1;startSize=28;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="470" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="client_f1" value="PK  id (BIGINT)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="508" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="client_f2" value="    client_id (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="530" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="client_f3" value="    client_secret (VARCHAR)" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="552" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="client_f4" value="    grant_types / scope" style="text;html=1;fontSize=11;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="115" y="574" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- 关系连线 -->
+        <!-- tenant → user (1:N) -->
+        <mxCell id="r1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERone" edge="1" parent="1" source="tenant" target="user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1_label" value="1:N" style="text;html=1;fontSize=9;fontColor=#666" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="40" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- tenant → role (1:N) -->
+        <mxCell id="r2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERone" edge="1" parent="1" source="tenant" target="role">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- tenant → tenant_package (N:1) -->
+        <mxCell id="r3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERone;startArrow=ERmany" edge="1" parent="1" source="tpkg" target="tenant">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- user → role (N:M via role_id) -->
+        <mxCell id="r4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERmany" edge="1" parent="1" source="user" target="role">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4_label" value="N:M" style="text;html=1;fontSize=9;fontColor=#666" vertex="1" parent="1">
+          <mxGeometry x="520" y="310" width="40" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- role → menu (N:M via role_menu) -->
+        <mxCell id="r5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERmany" edge="1" parent="1" source="role" target="rm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERmany" edge="1" parent="1" source="menu" target="rm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- role → role_scope (1:N) -->
+        <mxCell id="r6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERone" edge="1" parent="1" source="role" target="rs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- role_scope → scope_data (N:1) -->
+        <mxCell id="r7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERone;startArrow=ERmany" edge="1" parent="1" source="rs" target="sd">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- user → user_dept (1:N) -->
+        <mxCell id="r8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERone" edge="1" parent="1" source="user" target="ud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- dept → user_dept (1:N) -->
+        <mxCell id="r9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERone" edge="1" parent="1" source="dept" target="ud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- tenant → dept (1:N) -->
+        <mxCell id="r10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=ERmany;startArrow=ERone" edge="1" parent="1" source="tenant" target="dept">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 图例 -->
+        <mxCell id="legend" value="图例" style="swimlane;html=1;startSize=22;fillColor=#ffffff;strokeColor=#333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="700" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" value="" style="swimlane;html=1;startSize=22;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff" vertex="1" parent="legend">
+          <mxGeometry x="15" y="32" width="20" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l1t" value="租户相关" style="text;html=1;align=left;valign=middle;fontSize=10" vertex="1" parent="legend">
+          <mxGeometry x="42" y="32" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" value="" style="swimlane;html=1;startSize=22;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="legend">
+          <mxGeometry x="15" y="55" width="20" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l2t" value="用户/角色/部门" style="text;html=1;align=left;valign=middle;fontSize=10" vertex="1" parent="legend">
+          <mxGeometry x="42" y="55" width="140" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="src" value="代码来源: doc/sql/bladex/bladex.mysql.all.create.sql (表结构)&#10;bladex-boot/.../system/entity/ (实体类)" style="text;html=1;align=left;valign=top;fontSize=10;fontColor=#999" vertex="1" parent="1">
+          <mxGeometry x="100" y="830" width="400" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

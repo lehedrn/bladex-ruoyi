@@ -1,0 +1,235 @@
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="boot-business-flow-matrix" name="业务流矩阵图">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="BladeX-Boot 核心业务流程矩阵" style="text;html=1;align=center;valign=middle;fontSize=18;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="450" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="图例: ■ 入口(蓝) ■ 安全(绿) ■ 数据(橙) ■ 中间件(红) ■ 输出(灰)" style="text;html=1;align=left;fontSize=10;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="10" width="400" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="10" y="35" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="50" y="35" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="90" y="35" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="130" y="35" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="170" y="35" width="14" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- Flow labels column -->
+        <mxCell id="flow-label-1" value="流程 1: 用户登录" style="text;html=1;align=center;valign=middle;fontSize=12;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="90" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-label-2" value="流程 2: 权限验证" style="text;html=1;align=center;valign=middle;fontSize=12;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="200" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-label-3" value="流程 3: 角色授权" style="text;html=1;align=center;valign=middle;fontSize=12;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="310" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-label-4" value="流程 4: 数据权限" style="text;html=1;align=center;valign=middle;fontSize=12;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="420" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-label-5" value="流程 5: Token刷新" style="text;html=1;align=center;valign=middle;fontSize=12;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="530" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-label-6" value="流程 6: 账户锁定" style="text;html=1;align=center;valign=middle;fontSize=12;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="10" y="640" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Flow 1: 用户登录 ===== -->
+        <mxCell id="f1-n1" value="POST /oauth/token" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="160" y="90" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1-n2" value="CaptchaTokenGranter&#10;grant()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="320" y="90" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1-n3" value="preValidation()&#10;弱密码检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="470" y="90" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1-n4" value="loadByUsername()&#10;UserCache + DB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="620" y="90" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1-n5" value="matches()&#10;BCrypt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="770" y="90" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1-n6" value="authValidation()&#10;租户状态验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="900" y="90" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1-n7" value="enhance()&#10;生成JWT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="90" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1-n8" value="返回 Token&#10;{access_token}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="90" width="130" height="35" as="geometry" />
+        </mxCell>
+        <!-- Flow 1 arrows -->
+        <mxCell id="f1-a1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f1-n1" target="f1-n2" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1-a2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f1-n2" target="f1-n3" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1-a3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f1-n3" target="f1-n4" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1-a4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f1-n4" target="f1-n5" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1-a5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f1-n5" target="f1-n6" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1-a6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f1-n6" target="f1-n7" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1-a7" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f1-n7" target="f1-n8" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== Flow 2: 权限验证 ===== -->
+        <mxCell id="f2-n1" value="HTTP请求" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="160" y="200" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2-n2" value="SecureInterceptor&#10;跳过URL检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="300" y="200" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2-n3" value="JWT解码&#10;提取BladeUser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="460" y="200" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2-n4" value="BladePermissionHandler&#10;permissionAll()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="610" y="200" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2-n5" value="SysCache(Redis)&#10;缓存检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="780" y="200" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2-n6" value="DB查询&#10;未命中缓存时" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="940" y="200" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2-n7" value="放行 / 403&#10;Forbidden" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="200" width="130" height="35" as="geometry" />
+        </mxCell>
+        <!-- Flow 2 arrows -->
+        <mxCell id="f2-a1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f2-n1" target="f2-n2" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2-a2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f2-n2" target="f2-n3" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2-a3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f2-n3" target="f2-n4" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2-a4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f2-n4" target="f2-n5" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2-a5" value="miss" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f2-n5" target="f2-n6" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2-a6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f2-n6" target="f2-n7" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2-a7" value="hit" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=0.75;exitY=1;entryX=0;entryY=0.5;curved=1;" parent="1" source="f2-n5" target="f2-n7" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== Flow 3: 角色授权 ===== -->
+        <mxCell id="f3-n1" value="POST /role/grant" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="160" y="310" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3-n2" value="RoleController&#10;grant()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="320" y="310" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3-n3" value="SysCache.clear()&#10;清除角色缓存" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="460" y="310" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3-n4" value="保存 role_menu&#10;角色-菜单关联" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="620" y="310" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3-n5" value="保存 role_scope&#10;数据权限+API权限" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="780" y="310" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3-n6" value="返回成功" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="940" y="310" width="120" height="35" as="geometry" />
+        </mxCell>
+        <!-- Flow 3 arrows -->
+        <mxCell id="f3-a1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f3-n1" target="f3-n2" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3-a2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f3-n2" target="f3-n3" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3-a3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f3-n3" target="f3-n4" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3-a4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f3-n4" target="f3-n5" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3-a5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f3-n5" target="f3-n6" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== Flow 4: 数据权限 ===== -->
+        <mxCell id="f4-n1" value="MyBatis执行SQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="160" y="420" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4-n2" value="BladeScopeModelHandler&#10;拦截SQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="320" y="420" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4-n3" value="获取用户角色&#10;从JWT/缓存" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="490" y="420" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4-n4" value="查询 scope_data&#10;获取数据权限规则" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="640" y="420" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4-n5" value="追加 WHERE&#10;条件到SQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="800" y="420" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4-n6" value="执行SQL&#10;(带数据权限过滤)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="940" y="420" width="140" height="35" as="geometry" />
+        </mxCell>
+        <!-- Flow 4 arrows -->
+        <mxCell id="f4-a1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f4-n1" target="f4-n2" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4-a2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f4-n2" target="f4-n3" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4-a3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f4-n3" target="f4-n4" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4-a4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f4-n4" target="f4-n5" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4-a5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f4-n5" target="f4-n6" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== Flow 5: Token刷新 ===== -->
+        <mxCell id="f5-n1" value="POST /oauth/token&#10;(refresh_token)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="160" y="530" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5-n2" value="验证 refresh_token&#10;JWT有效性检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="320" y="530" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5-n3" value="authValidation()&#10;租户状态检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="480" y="530" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5-n4" value="生成新 Token&#10;enhance() JWT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="630" y="530" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5-n5" value="返回新 Token&#10;{access_token}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="780" y="530" width="140" height="35" as="geometry" />
+        </mxCell>
+        <!-- Flow 5 arrows -->
+        <mxCell id="f5-a1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f5-n1" target="f5-n2" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f5-a2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f5-n2" target="f5-n3" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f5-a3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f5-n3" target="f5-n4" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f5-a4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f5-n4" target="f5-n5" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== Flow 6: 账户锁定 ===== -->
+        <mxCell id="f6-n1" value="登录失败" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="160" y="640" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f6-n2" value="BladeLockHandler&#10;记录失败" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="300" y="640" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f6-n3" value="Redis INCR&#10;failCount" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="450" y="640" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f6-n4" value="failCount &gt;= 5?&#10;判断是否锁定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="590" y="640" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f6-n5" value="Redis SETEX&#10;lockKey 30min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="750" y="640" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f6-n6" value="拒绝登录&#10;返回403" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="900" y="640" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f6-n7" value="登录成功→&#10;清除计数" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="590" y="700" width="140" height="35" as="geometry" />
+        </mxCell>
+        <!-- Flow 6 arrows -->
+        <mxCell id="f6-a1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f6-n1" target="f6-n2" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f6-a2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f6-n2" target="f6-n3" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f6-a3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f6-n3" target="f6-n4" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f6-a4" value="是" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#b85450;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f6-n4" target="f6-n5" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f6-a5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="f6-n5" target="f6-n6" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f6-a6" value="否" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;fontSize=9;strokeColor=#82b366;exitX=0.5;exitY=1;entryX=0.5;entryY=0;curved=1;" parent="1" source="f6-n4" target="f6-n7" edge="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Redis Key annotations -->
+        <mxCell id="redis-anno" value="Redis Key 格式 (锁定):&#10;blade:lock:fail:account:{account}&#10;blade:lock:fail:ip:{ip}&#10;blade:lock:account:{account} (SETEX 30min)&#10;&#10;锁定阈值: failCount >= 5&#10;锁定时间: 30分钟" style="text;html=1;align=left;valign=top;fontSize=9;fontFamily=monospace;fillColor=#f8f8f8;strokeColor=#cccccc;rounded=1;whiteSpace=wrap;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="600" width="280" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Source Index -->
+        <mxCell id="source-index" value="代码来源索引:&#10;[blade-auth] CaptchaTokenGranter: grant, login flow&#10;[blade-auth] BladeAuthorizationHandler: preValidation, authValidation, authSuccessful&#10;[blade-auth] BladeUserDetailService: loadByUsername&#10;[blade-auth] BladeLockHandler: validateAccountLock, validateIpLock, accountLock, accountUnlock&#10;[blade-auth] BladePasswordHandler: matches&#10;[blade-auth] BladeTokenHandler: enhance(JWT)&#10;[core-boot] SecureInterceptor: 权限拦截&#10;[common/handler] BladePermissionHandler: permissionAll, hasPermission, hasMenu&#10;[common/handler] BladeScopeModelHandler: SQL数据权限拦截&#10;[common/cache] SysCache: Redis缓存管理&#10;[blade-system] RoleController: grant, save role_menu, role_scope" style="text;html=1;align=left;valign=top;fontSize=9;fontFamily=monospace;fillColor=#f8f8f8;strokeColor=#cccccc;rounded=1;whiteSpace=wrap;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="10" y="760" width="400" height="130" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

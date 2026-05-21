@@ -1,0 +1,256 @@
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="boot-business-components" name="业务层组件图">
+    <mxGraphModel dx="1300" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="BladeX-Boot 业务层组件图" style="text;html=1;align=center;valign=middle;fontSize=18;fontStyle=1;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="400" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Auth Module (15 files) ===== -->
+        <mxCell id="auth-swim" value="auth 模块 (15 files)" style="swimlane;html=1;startSize=28;horizontal=1;containerType=tree;collapsible=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#9673a6;strokeWidth=1;fillColor=#f0e5ff;fontSize=12;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="20" y="60" width="380" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-cfg" value="BladeAuthConfiguration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="10" y="35" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-h1" value="BladeAuthorizationHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="10" y="70" width="170" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-s1" value="BladeUserDetailService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="195" y="35" width="165" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-h2" value="BladeLockHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="195" y="70" width="165" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-h3" value="BladePasswordHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="10" y="105" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-h4" value="BladeTokenHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="195" y="105" width="165" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-tg1" value="CaptchaTokenGranter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="10" y="140" width="140" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-tg2" value="SmsTokenGranter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="160" y="140" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-tg3" value="SocialTokenGranter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="10" y="175" width="140" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-tg4" value="RegisterTokenGranter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="160" y="175" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-ep" value="Oauth2SmsEndpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="auth-swim" vertex="1">
+          <mxGeometry x="300" y="140" width="70" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ===== System Module (170+ files) ===== -->
+        <mxCell id="sys-swim" value="system 模块 (170+ files)" style="swimlane;html=1;startSize=28;horizontal=1;containerType=tree;collapsible=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#d79b00;strokeWidth=1;fillColor=#fff5e6;fontSize=12;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="420" y="60" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-ctrl" value="22 Controllers: User/Menu/Role/&#10;Tenant/Dept/Dict/Post/Param/&#10;Region/Client/TopTenant/Audit/..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="10" y="35" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-svc" value="33 Services: IUserService/&#10;IMenuService/IRoleService/&#10;ITenantService/IDeptService/..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="220" y="35" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-mapper" value="27 Mappers: UserMapper/&#10;MenuMapper/RoleMapper/&#10;TenantMapper/DeptMapper/..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="10" y="105" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-entity" value="21 Entities: User/Menu/Role/&#10;Tenant/Dept/Dict/DictBiz/&#10;Post/Param/Region/Client/..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="220" y="105" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-wrap" value="14 Wrappers: UserWrapper/&#10;MenuWrapper/RoleWrapper/..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="10" y="168" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-vo" value="10 VOs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="150" y="168" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-dto" value="7 DTOs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="240" y="168" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-rule" value="Tenant Rules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="sys-swim" vertex="1">
+          <mxGeometry x="330" y="168" width="90" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Resource Module (54 files) ===== -->
+        <mxCell id="res-swim" value="resource 模块 (54 files)" style="swimlane;html=1;startSize=28;horizontal=1;containerType=tree;collapsible=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#6c8ebf;strokeWidth=1;fillColor=#dae8fc;fontSize=12;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="880" y="60" width="400" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="res-ctrl" value="OssController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="10" y="35" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="res-ctrl2" value="SmsController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="140" y="35" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="res-ctrl3" value="AttachController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="270" y="35" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="res-ep" value="OssEndpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="10" y="70" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="res-b1" value="OssBuilder" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="140" y="70" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="res-b2" value="SmsBuilder" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="270" y="70" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="res-r1" value="OSS Rules (MinIO/Aliyun/Qiniu/Qcloud/Huawei)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="10" y="110" width="280" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="res-r2" value="SMS Rules (Aliyun/Tencent/Yunpian)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="res-swim" vertex="1">
+          <mxGeometry x="10" y="145" width="280" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Desk Module (7 files) ===== -->
+        <mxCell id="desk-swim" value="desk 模块 (7 files)" style="swimlane;html=1;startSize=28;horizontal=1;containerType=tree;collapsible=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#82b366;strokeWidth=1;fillColor=#e8f5e9;fontSize=12;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="20" y="310" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-ctrl" value="NoticeController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="desk-swim" vertex="1">
+          <mxGeometry x="10" y="35" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-entity" value="Notice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="desk-swim" vertex="1">
+          <mxGeometry x="155" y="35" width="80" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-svc" value="INoticeService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="desk-swim" vertex="1">
+          <mxGeometry x="10" y="70" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-mapper" value="NoticeMapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="desk-swim" vertex="1">
+          <mxGeometry x="155" y="70" width="100" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Develop Module (28 files) ===== -->
+        <mxCell id="dev-swim" value="develop 模块 (28 files)" style="swimlane;html=1;startSize=28;horizontal=1;containerType=tree;collapsible=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#b85450;strokeWidth=1;fillColor=#f8cecc;fontSize=12;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="360" y="310" width="400" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-ctrl1" value="CodeController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="dev-swim" vertex="1">
+          <mxGeometry x="10" y="35" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-ctrl2" value="ModelController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="dev-swim" vertex="1">
+          <mxGeometry x="140" y="35" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-ctrl3" value="CodeSettingController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="dev-swim" vertex="1">
+          <mxGeometry x="270" y="35" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-svc" value="IGenerateService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="dev-swim" vertex="1">
+          <mxGeometry x="10" y="70" width="120" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Flow Module ===== -->
+        <mxCell id="flow-swim" value="flow 模块" style="swimlane;html=1;startSize=28;horizontal=1;containerType=tree;collapsible=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;fontSize=12;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="780" y="310" width="500" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-cfg" value="FlowEngineConfig" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="flow-swim" vertex="1">
+          <mxGeometry x="10" y="35" width="140" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-svc" value="FlowBusinessService" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="flow-swim" vertex="1">
+          <mxGeometry x="160" y="35" width="140" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-ctrl" value="FlowController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" parent="flow-swim" vertex="1">
+          <mxGeometry x="310" y="35" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-demo" value="LeaveDemo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="flow-swim" vertex="1">
+          <mxGeometry x="10" y="70" width="130" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Common Module (28 files) ===== -->
+        <mxCell id="com-swim" value="common 模块 (28 files)" style="swimlane;html=1;startSize=28;horizontal=1;containerType=tree;collapsible=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#333333;strokeWidth=1;fillColor=#f5f5f5;fontSize=12;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="20" y="470" width="1260" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="com-c1" value="SysCache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="10" y="35" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-c2" value="UserCache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="120" y="35" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-c3" value="DictCache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="230" y="35" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-cfg1" value="BladeConfiguration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="350" y="35" width="140" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-h1" value="BladePermissionHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="500" y="35" width="170" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-h2" value="BladeScopeModelHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="680" y="35" width="170" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-l1" value="ApiLogListener" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="860" y="35" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-c4" value="TenantCache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="10" y="75" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-c5" value="ParamCache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="120" y="75" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-c6" value="MenuCache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="230" y="75" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-cfg2" value="BladeHandlerConfiguration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="350" y="75" width="170" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-h3" value="BladeRecordHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="530" y="75" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-l2" value="RequestLogFilter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="700" y="75" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-l3" value="SwaggerConfiguration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="860" y="75" width="140" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="com-l4" value="TenantProperties, TenantRule,&#10;DefaultTenantRule, BladeTenantHandler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="1010" y="35" width="230" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="com-l5" value="MybatisPlusConfig, BladeQueryWrapper,&#10;BladeCondition, Query..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="com-swim" vertex="1">
+          <mxGeometry x="1010" y="110" width="230" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="图例: ■ Controller ■ Service ■ Mapper ■ Entity ■ Cache ■ Configuration ■ Handler ■ Listener ■ Rule/Builder ■ TokenGranter" style="text;html=1;align=left;valign=top;fontSize=10;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="20" y="670" width="600" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="20" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="60" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="100" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="140" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="180" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="220" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="260" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="300" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="340" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg10" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="380" y="695" width="14" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- Source Index -->
+        <mxCell id="source-index" value="代码来源索引:&#10;[blade-auth] → auth 模块 (15 files)&#10;[blade-system] → system 模块 (170+ files)&#10;[blade-resource] → resource 模块 (54 files)&#10;[blade-desk] → desk 模块 (7 files)&#10;[blade-develop] → develop 模块 (28 files)&#10;[blade-flow] → flow 模块&#10;[blade-common] → common 模块 (28 files)" style="text;html=1;align=left;valign=top;fontSize=9;fontFamily=monospace;fillColor=#f8f8f8;strokeColor=#cccccc;rounded=1;whiteSpace=wrap;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="20" y="720" width="320" height="120" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

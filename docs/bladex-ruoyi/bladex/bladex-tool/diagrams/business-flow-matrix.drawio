@@ -1,0 +1,201 @@
+<mxfile host="app.diagrams.net" modified="2026-05-20T00:00:00.000Z" agent="BladeX-Tool" version="24.0.0" type="device">
+  <diagram id="business-flow-matrix" name="业务流矩阵图">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 流程1: 用户登录 -->
+        <mxCell id="f1" value="1. 用户登录流程" style="swimlane;html=1;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="1340" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_1" value="POST /blade-auth/oauth/token" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="60" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_2" value="CaptchaTokenGranter&#10;验证验证码" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="260" y="60" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_3" value="BladeAuthorizationHandler&#10;前置验证 (锁定/弱密码)" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="450" y="60" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_4" value="BladeUserDetailService&#10;查询用户 + 角色 + 权限" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="660" y="60" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_5" value="BladePasswordHandler&#10;密码匹配 (BCrypt)" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="870" y="60" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_6" value="BladeTokenHandler&#10;生成 JWT Token" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1070" y="60" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_7" value="返回 access_token&#10;+ refresh_token" style="rounded=1;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1250" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 箭头 -->
+        <mxCell id="f1_a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f1_1" target="f1_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1_a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f1_2" target="f1_3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1_a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f1_3" target="f1_4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1_a4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f1_4" target="f1_5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1_a5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f1_5" target="f1_6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f1_a6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f1_6" target="f1_7"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- 流程2: 权限验证 -->
+        <mxCell id="f2" value="2. 权限验证流程" style="swimlane;html=1;startSize=28;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="180" width="1340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_1" value="HTTP 请求到达" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="220" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_2" value="SecureInterceptor&#10;跳过 URL 检查" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="220" y="220" width="160" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_3" value="JWT 解码验证&#10;提取 BladeUser" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="410" y="220" width="160" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_4" value="BladePermissionHandler&#10;hasPermission / hasMenu" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_5" value="查询 Redis 缓存&#10;apiScope:code:{code}:{roleId}" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="830" y="220" width="220" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_6" value="缓存未命中 → 查 DB&#10;blade_scope_data / blade_menu" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1080" y="220" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_7" value="放行 / 403" style="rounded=1;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1340" y="220" width="20" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f2_a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f2_1" target="f2_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2_a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f2_2" target="f2_3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2_a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f2_3" target="f2_4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2_a4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f2_4" target="f2_5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2_a5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f2_5" target="f2_6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- 流程3: 角色授权 -->
+        <mxCell id="f3" value="3. 角色授权流程" style="swimlane;html=1;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="320" width="1340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_1" value="POST /blade-system/role/grant" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="360" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_2" value="RoleController.grant()&#10;接收角色/菜单/数据/API" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="280" y="360" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_3" value="清除 SYS_CACHE" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="510" y="360" width="160" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_4" value="保存角色-菜单关联&#10;blade_role_menu" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="700" y="360" width="180" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_5" value="保存角色-数据权限关联&#10;blade_role_scope (category=1)" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="910" y="360" width="220" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_6" value="保存角色-API权限关联&#10;blade_role_scope (category=2)" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1160" y="360" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f3_a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f3_1" target="f3_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3_a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f3_2" target="f3_3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3_a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f3_3" target="f3_4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3_a4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f3_4" target="f3_5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3_a5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f3_5" target="f3_6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- 流程4: 数据权限 -->
+        <mxCell id="f4" value="4. 数据权限拦截流程" style="swimlane;html=1;startSize=28;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="460" width="1340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_1" value="MyBatis SQL 执行" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="500" width="160" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_2" value="BladeScopeModelHandler&#10;拦截器触发" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="240" y="500" width="180" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_3" value="获取当前用户角色&#10;从 BladeContext" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="450" y="500" width="160" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_4" value="查询数据权限规则&#10;blade_scope_data (按角色)" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="640" y="500" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_5" value="SQL 追加 WHERE 条件&#10;scope_column + scope_value" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="870" y="500" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_6" value="租户隔离追加&#10;WHERE tenant_id = ?" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1100" y="500" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_7" value="执行修改后 SQL" style="rounded=1;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1330" y="500" width="20" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f4_a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f4_1" target="f4_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4_a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f4_2" target="f4_3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4_a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f4_3" target="f4_4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4_a4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f4_4" target="f4_5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4_a5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f4_5" target="f4_6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- 流程5: Token 刷新 -->
+        <mxCell id="f5" value="5. Token 刷新流程" style="swimlane;html=1;startSize=28;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="600" width="1340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f5_1" value="POST /blade-auth/oauth/token&#10;grantType=refresh_token" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="50" y="640" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5_2" value="验证 refresh_token&#10;JWT 解码 + 有效期检查" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="280" y="640" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5_3" value="租户状态验证&#10;authValidation()" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="510" y="640" width="160" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5_4" value="生成新 access_token&#10;TokenHandler.enhance()" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="700" y="640" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5_5" value="返回新 Token 对&#10;{access_token, refresh_token}" style="rounded=1;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="930" y="640" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f5_a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f5_1" target="f5_2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f5_a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f5_2" target="f5_3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f5_a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f5_3" target="f5_4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f5_a4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=1;endArrow=classic" edge="1" parent="1" source="f5_4" target="f5_5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- 颜色图例 -->
+        <mxCell id="legend" value="图例" style="swimlane;html=1;startSize=22;fillColor=#ffffff;strokeColor=#333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="740" width="600" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" value="" style="rounded=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff" vertex="1" parent="legend">
+          <mxGeometry x="15" y="14" width="18" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l1t" value="入口" style="text;html=1;align=left;valign=middle;fontSize=10" vertex="1" parent="legend">
+          <mxGeometry x="38" y="14" width="60" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" value="" style="rounded=1;fillColor=#60a917;strokeColor=#2D7E2D;fontColor=#ffffff" vertex="1" parent="legend">
+          <mxGeometry x="120" y="14" width="18" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l2t" value="安全/认证" style="text;html=1;align=left;valign=middle;fontSize=10" vertex="1" parent="legend">
+          <mxGeometry x="143" y="14" width="80" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" value="" style="rounded=1;fillColor=#e5a50a;strokeColor=#B8860B;fontColor=#ffffff" vertex="1" parent="legend">
+          <mxGeometry x="250" y="14" width="18" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l3t" value="数据/业务" style="text;html=1;align=left;valign=middle;fontSize=10" vertex="1" parent="legend">
+          <mxGeometry x="273" y="14" width="80" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" value="" style="rounded=1;fillColor=#b85450;strokeColor=#8B3A3A;fontColor=#ffffff" vertex="1" parent="legend">
+          <mxGeometry x="380" y="14" width="18" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l4t" value="中间件/存储" style="text;html=1;align=left;valign=middle;fontSize=10" vertex="1" parent="legend">
+          <mxGeometry x="403" y="14" width="100" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" value="" style="rounded=1;fillColor=#9673a6;strokeColor=#6B4E8B;fontColor=#ffffff" vertex="1" parent="legend">
+          <mxGeometry x="530" y="14" width="18" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="l5t" value="输出/结果" style="text;html=1;align=left;valign=middle;fontSize=10" vertex="1" parent="legend">
+          <mxGeometry x="553" y="14" width="40" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="src" value="代码来源: 各流程涉及类路径见 01_系统架构分析.md 各流程详细说明" style="text;html=1;align=left;valign=top;fontSize=10;fontColor=#999" vertex="1" parent="1">
+          <mxGeometry x="700" y="740" width="670" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

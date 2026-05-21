@@ -1,0 +1,147 @@
+<mxfile host="app.diagrams.net" modified="2026-05-20T00:00:00.000Z" agent="BladeX-Tool" version="24.0.0" type="device">
+  <diagram id="module-dependency" name="模块依赖图">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- blade-core-boot (中心) -->
+        <mxCell id="boot" value="blade-core-boot" style="ellipse;shape=doubleEllipse;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="470" y="30" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 第一圈: 9个核心依赖 -->
+        <mxCell id="ctx" value="blade-core-context" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="50" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="blade-core-db" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="300" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="secure" value="blade-core-secure" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="550" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" value="blade-core-cloud" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="800" y="180" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cache" value="blade-starter-cache" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="50" y="310" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" value="blade-starter-redis" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="300" y="310" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="log" value="blade-starter-log" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="550" y="310" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mybatis" value="blade-starter-mybatis" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="800" y="310" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="xss" value="blade-starter-xss" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333" vertex="1" parent="1">
+          <mxGeometry x="425" y="420" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 第二圈: tool 层 -->
+        <mxCell id="tool" value="blade-core-tool" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="425" y="540" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 第三圈: launch + auto -->
+        <mxCell id="launch" value="blade-core-launch" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="670" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="auto" value="blade-core-auto" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="650" y="670" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- boot → 第一圈 连接 -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2;entryX=0.5;entryY=0" edge="1" parent="1" source="boot" target="ctx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2;entryX=0.5;entryY=0" edge="1" parent="1" source="boot" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2;entryX=0.5;entryY=0" edge="1" parent="1" source="boot" target="secure">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2;entryX=0.5;entryY=0" edge="1" parent="1" source="boot" target="cloud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2" edge="1" parent="1" source="boot" target="cache">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2" edge="1" parent="1" source="boot" target="redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2" edge="1" parent="1" source="boot" target="log">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2" edge="1" parent="1" source="boot" target="mybatis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#333;strokeWidth=2" edge="1" parent="1" source="boot" target="xss">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 第一圈 → tool 连接 -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="ctx" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="db" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="secure" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="cloud" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="redis" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="mybatis" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- tool → launch + auto -->
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="tool" target="launch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1;dashed=1" edge="1" parent="1" source="tool" target="auto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 图例 -->
+        <mxCell id="legend" value="图例" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="780" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" value="" style="ellipse;shape=doubleEllipse;fillColor=#1ba1e2;strokeColor=#006EAF" vertex="1" parent="legend">
+          <mxGeometry x="20" y="40" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l1t" value="聚合模块" style="text;html=1;align=left;valign=middle;fontSize=11" vertex="1" parent="legend">
+          <mxGeometry x="50" y="40" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" value="" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="legend">
+          <mxGeometry x="20" y="68" width="20" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l2t" value="服务治理层" style="text;html=1;align=left;valign=middle;fontSize=11" vertex="1" parent="legend">
+          <mxGeometry x="50" y="68" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" value="" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="legend">
+          <mxGeometry x="20" y="94" width="20" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l3t" value="数据/上下文层" style="text;html=1;align=left;valign=middle;fontSize=11" vertex="1" parent="legend">
+          <mxGeometry x="50" y="94" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" value="" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="legend">
+          <mxGeometry x="20" y="120" width="20" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="l4t" value="工具层" style="text;html=1;align=left;valign=middle;fontSize=11" vertex="1" parent="legend">
+          <mxGeometry x="50" y="120" width="150" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="src" value="代码来源: blade-core-boot/pom.xml — 聚合依赖定义" style="text;html=1;align=left;valign=top;fontSize=10;fontColor=#999" vertex="1" parent="1">
+          <mxGeometry x="300" y="880" width="400" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
