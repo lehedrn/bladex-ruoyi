@@ -1,0 +1,215 @@
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="BladeX Backend Analysis" version="24.0.0" type="device">
+  <diagram id="backend-module-dep" name="Backend Module Dependency">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="BladeX 业务层模块依赖图" style="text;html=1;align=center;valign=middle;fontStyle=1;fontSize=18;fontColor=#000000;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== System Module ===== -->
+        <mxCell id="sys-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontColor=#1565C0;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="80" width="1140" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-label" value="system 系统模块（核心）" style="text;html=1;align=left;valign=top;fontStyle=1;fontSize=14;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="85" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- System Controllers -->
+        <mxCell id="sys-ctrl" value="System Controller 层&lt;br&gt;（22 个 REST 接口）" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="280" height="50" as="geometry" />
+        </mxCell>
+        <!-- System Services -->
+        <mxCell id="sys-svc" value="System Service 层&lt;br&gt;（用户/角色/菜单/部门/租户/字典等）" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="120" y="210" width="280" height="50" as="geometry" />
+        </mxCell>
+        <!-- System Mappers -->
+        <mxCell id="sys-mapper" value="System Mapper 层&lt;br&gt;（MyBatis XML + BaseMapper）" style="rounded=1;whiteSpace=0;html=1;fillColor=#FFA726;strokeColor=#E65100;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="120" y="300" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Internal arrows for System module -->
+        <mxCell id="sys-ctrl-svc" value="调用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sys-ctrl" target="sys-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sys-svc-mapper" value="调用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sys-svc" target="sys-mapper">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        ===== Desk Module ===== -->
+        <mxCell id="desk-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontColor=#E65100;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="430" width="340" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-label" value="desk 办公模块" style="text;html=1;align=left;valign=top;fontStyle=1;fontSize=14;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="40" y="435" width="150" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-ctrl" value="NoticeController&lt;br&gt;（公告/通知管理）" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="470" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-svc" value="Desk Service + Mapper" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="530" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="desk-ctrl-svc" value="调用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1" source="desk-ctrl" target="desk-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Resource Module ===== -->
+        <mxCell id="res-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;fontColor=#6A1B9A;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="430" width="340" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="res-label" value="resource 资源模块" style="text;html=1;align=left;valign=top;fontStyle=1;fontSize=14;fontColor=#6A1B9A;" vertex="1" parent="1">
+          <mxGeometry x="410" y="435" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="res-ctrl" value="OssController / AttachController&lt;br&gt;SmsController" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="470" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="res-svc" value="Resource Service + Mapper" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="530" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="res-ctrl-svc" value="调用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1" source="res-ctrl" target="res-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Develop Module ===== -->
+        <mxCell id="dev-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#E8F5E9;strokeColor=#1B5E20;fontColor=#1B5E20;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="770" y="430" width="370" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-label" value="develop 开发工具模块" style="text;html=1;align=left;valign=top;fontStyle=1;fontSize=14;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="780" y="435" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-ctrl" value="CodeController / CodeSettingController&lt;br&gt;DatasourceController / ModelController" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="470" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-svc" value="Develop Service + Mapper" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="530" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dev-ctrl-svc" value="调用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1" source="dev-ctrl" target="dev-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Flow Module ===== -->
+        <mxCell id="flow-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#EFEBE9;strokeColor=#4E342E;fontColor=#4E342E;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="620" width="550" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-label" value="flow 工作流模块（Flowable）" style="text;html=1;align=left;valign=top;fontStyle=1;fontSize=14;fontColor=#4E342E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="625" width="220" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-ctrl" value="WorkController / FlowProcessController / FlowManagerController&lt;br&gt;FlowModelController / FlowFollowController / LeaveController" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="660" width="450" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-svc" value="Flow Service（集成 Flowable Engine API）" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="450" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-ctrl-svc" value="调用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1" source="flow-ctrl" target="flow-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Job Module ===== -->
+        <mxCell id="job-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#E0F7FA;strokeColor=#006064;fontColor=#006064;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="610" y="620" width="560" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="job-label" value="job 定时任务模块（PowerJob）" style="text;html=1;align=left;valign=top;fontStyle=1;fontSize=14;fontColor=#006064;" vertex="1" parent="1">
+          <mxGeometry x="620" y="625" width="220" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="job-ctrl" value="JobInfoController / JobServerController" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="660" width="460" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="job-svc" value="Job Service（集成 PowerJob API）" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="720" width="460" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="job-ctrl-svc" value="调用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1" source="job-ctrl" target="job-svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Auth Module ===== -->
+        <mxCell id="auth-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#FCE4EC;strokeColor=#880E4F;fontColor=#880E4F;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="810" width="1140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-label" value="auth 认证模块（OAuth2 Token Granter）" style="text;html=1;align=left;valign=top;fontStyle=1;fontSize=14;fontColor=#880E4F;" vertex="1" parent="1">
+          <mxGeometry x="40" y="815" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-ctrl" value="Oauth2SmsEndpoint（短信验证码端点）" style="rounded=1;whiteSpace=0;html=1;fillColor=#EC407A;strokeColor=#880E4F;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="835" width="300" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-svc" value="Token Granter 链（Password/Captcha/SMS/Social/Register）" style="rounded=1;whiteSpace=0;html=1;fillColor=#EC407A;strokeColor=#880E4F;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="500" y="835" width="400" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-dep" value="Handler（IUserHandler 等）" style="rounded=1;whiteSpace=0;html=1;fillColor=#EC407A;strokeColor=#880E4F;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="950" y="835" width="180" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Cross-module dependency arrows -->
+        <mxCell id="cross-auth-depends" value="依赖" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#880E4F;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="auth-svc" target="sys-svc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="790" />
+              <mxPoint x="260" y="790" />
+              <mxPoint x="260" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="cross-flow-depends" value="依赖 system&lt;br&gt;用户/部门数据" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4E342E;strokeWidth=2;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="flow-svc" target="sys-svc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="600" />
+              <mxPoint x="260" y="600" />
+              <mxPoint x="260" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="cross-dev-depends" value="依赖 system&lt;br&gt;数据源配置" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1B5E20;strokeWidth=2;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="dev-svc" target="sys-svc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="955" y="590" />
+              <mxPoint x="400" y="590" />
+              <mxPoint x="400" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#F5F5F5;strokeColor=#9E9E9E;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="950" y="120" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="图例" style="text;html=1;align=center;valign=middle;fontStyle=1;fontSize=13;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="950" y="125" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ctrl" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="970" y="160" width="30" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ctrl-t" value="Controller 层" style="text;html=1;align=left;valign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="157" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-svc" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="970" y="190" width="30" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-svc-t" value="Service 层" style="text;html=1;align=left;valign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="187" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-mapper" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#FFA726;strokeColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="970" y="220" width="30" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-mapper-t" value="Mapper 层" style="text;html=1;align=left;valign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="217" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-solid" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#424242;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry x="970" y="245" width="30" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-solid-t" value="模块内调用" style="text;html=1;align=left;valign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="242" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-dash" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#424242;strokeWidth=2;dashed=1;" edge="1" parent="1">
+          <mxGeometry x="970" y="255" width="30" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-dash-t" value="跨模块依赖" style="text;html=1;align=left;valign=middle;fontSize=11;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="252" width="120" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

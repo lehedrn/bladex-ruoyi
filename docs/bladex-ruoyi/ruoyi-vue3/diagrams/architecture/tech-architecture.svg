@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1400" viewBox="0 0 1200 1400">
+<defs>
+  <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#424242"/>
+  </marker>
+</defs>
+  <rect x="100" y="40" width="1000" height="180" rx="5" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">前端层 (Vue 3 + Vite)</text>
+  <rect x="130" y="70" width="180" height="60" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="220" y="100" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Views 页面组件</text>
+  <rect x="330" y="70" width="180" height="60" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="420" y="100" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">通用 Components</text>
+  <rect x="530" y="70" width="180" height="60" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="620" y="100" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Layout 布局</text>
+  <rect x="730" y="70" width="160" height="60" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="810" y="100" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Pinia Store</text>
+  <rect x="130" y="150" width="160" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="210" y="175" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Vue Router</text>
+  <rect x="310" y="150" width="160" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="390" y="175" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Axios HTTP</text>
+  <rect x="490" y="150" width="180" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="580" y="175" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Plugins &amp; Directives</text>
+  <rect x="690" y="150" width="180" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="780" y="175" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Element Plus UI</text>
+  <rect x="100" y="250" width="1000" height="70" rx="5" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
+  <text x="600" y="285" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">安全网关层 (Filter Chain)</text>
+  <rect x="130" y="260" width="940" height="50" rx="5" fill="#ffe6cc" stroke="#d79b00" stroke-width="1"/>
+  <text x="600" y="285" font-family="Arial, sans-serif" font-size="12" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">RepeatableFilter → XssFilter → RefererFi</text>
+  <rect x="100" y="350" width="1000" height="150" rx="5" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
+  <text x="600" y="425" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">Controller 层 (ruoyi-admin)</text>
+  <rect x="130" y="370" width="220" height="50" rx="5" fill="#e8f5e9" stroke="#666666" stroke-width="1"/>
+  <text x="240" y="395" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">系统 Controller</text>
+  <rect x="370" y="370" width="220" height="50" rx="5" fill="#e8f5e9" stroke="#666666" stroke-width="1"/>
+  <text x="480" y="395" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">监控 Controller</text>
+  <rect x="610" y="370" width="220" height="50" rx="5" fill="#e8f5e9" stroke="#666666" stroke-width="1"/>
+  <text x="720" y="395" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">通用 Controller</text>
+  <rect x="130" y="440" width="940" height="40" rx="5" fill="#c8e6c9" stroke="#66bb6a" stroke-width="1"/>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">@PreAuthorize / @Validated / @Log</text>
+  <rect x="100" y="530" width="1000" height="130" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="1"/>
+  <text x="600" y="595" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">Service 层 (ruoyi-system)</text>
+  <rect x="130" y="550" width="220" height="45" rx="5" fill="#f3e5f5" stroke="#666666" stroke-width="1"/>
+  <text x="240" y="572" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">用户/角色/菜单 Service</text>
+  <rect x="370" y="550" width="220" height="45" rx="5" fill="#f3e5f5" stroke="#666666" stroke-width="1"/>
+  <text x="480" y="572" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">配置/字典/岗位 Service</text>
+  <rect x="610" y="550" width="220" height="45" rx="5" fill="#f3e5f5" stroke="#666666" stroke-width="1"/>
+  <text x="720" y="572" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">监控/日志 Service</text>
+  <rect x="130" y="610" width="940" height="35" rx="5" fill="#e1bee7" stroke="#ab47bc" stroke-width="1"/>
+  <text x="600" y="628" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">@Transactional / @DataScope</text>
+  <rect x="100" y="690" width="1000" height="70" rx="5" fill="#fce4ec" stroke="#c2185b" stroke-width="1"/>
+  <text x="600" y="725" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">Mapper 层 (MyBatis XML)</text>
+  <rect x="130" y="700" width="940" height="50" rx="5" fill="#fce4ec" stroke="#666666" stroke-width="1"/>
+  <text x="600" y="725" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">SysUserMapper | SysRoleMapper | SysMenuM</text>
+  <rect x="100" y="790" width="1000" height="250" rx="5" fill="#e0e0e0" stroke="#757575" stroke-width="1"/>
+  <text x="600" y="915" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">基础设施层 (ruoyi-framework + ruoyi-common)</text>
+  <rect x="130" y="815" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="230" y="840" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">AOP 切面</text>
+  <rect x="350" y="815" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="450" y="840" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Security 配置</text>
+  <rect x="570" y="815" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="670" y="840" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">数据源配置</text>
+  <rect x="790" y="815" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="890" y="840" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">异步任务管理</text>
+  <rect x="130" y="880" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="230" y="905" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">注解体系</text>
+  <rect x="350" y="880" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="450" y="905" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">工具类库</text>
+  <rect x="570" y="880" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="670" y="905" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">异常体系</text>
+  <rect x="790" y="880" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="890" y="905" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">常量/枚举</text>
+  <rect x="130" y="945" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="230" y="970" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">实体类 / VO / DTO</text>
+  <rect x="350" y="945" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="450" y="970" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Redis 封装</text>
+  <rect x="570" y="945" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="670" y="970" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">分页模型</text>
+  <rect x="790" y="945" width="200" height="50" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="890" y="970" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Excel 工具</text>
+  <rect x="100" y="1070" width="1000" height="100" rx="5" fill="#b3e5fc" stroke="#0288d1" stroke-width="1"/>
+  <text x="600" y="1120" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">外部依赖</text>
+  <rect x="130" y="1095" width="160" height="50" rx="5" fill="#e1f5fe" stroke="#03a9f4" stroke-width="1"/>
+  <text x="210" y="1120" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">MySQL</text>
+  <rect x="310" y="1095" width="160" height="50" rx="5" fill="#e1f5fe" stroke="#03a9f4" stroke-width="1"/>
+  <text x="390" y="1120" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Redis</text>
+  <rect x="490" y="1095" width="180" height="50" rx="5" fill="#e1f5fe" stroke="#03a9f4" stroke-width="1"/>
+  <text x="580" y="1120" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Spring Boot</text>
+  <rect x="690" y="1095" width="180" height="50" rx="5" fill="#e1f5fe" stroke="#03a9f4" stroke-width="1"/>
+  <text x="780" y="1120" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Spring Security</text>
+  <rect x="890" y="1095" width="200" height="50" rx="5" fill="#e1f5fe" stroke="#666666" stroke-width="1"/>
+  <text x="990" y="1120" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">MyBatis / Druid / Kaptcha / FastJSON2 / </text>
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="11" fill="#666666" text-anchor="center" font-weight="normal" dominant-baseline="middle">业务调用</text>
+  <text x="600" y="680" font-family="Arial, sans-serif" font-size="11" fill="#666666" text-anchor="center" font-weight="normal" dominant-baseline="middle">持久化</text>
+  <text x="600" y="780" font-family="Arial, sans-serif" font-size="11" fill="#666666" text-anchor="center" font-weight="normal" dominant-baseline="middle">支撑</text>
+  <text x="600" y="1060" font-family="Arial, sans-serif" font-size="11" fill="#666666" text-anchor="center" font-weight="normal" dominant-baseline="middle">依赖</text>
+  <text x="390" y="290" font-family="Arial, sans-serif" font-size="11" fill="#333333" text-anchor="center" font-weight="bold" dominant-baseline="middle">HTTP/REST</text>
+  <path d="M 390,200 L 495,200 L 495,350 L 600,350" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-dasharray="5,5" stroke-linejoin="round"/>
+  <path d="M 600,500 L 600,515 L 600,515 L 600,530" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 600,660 L 600,675 L 600,675 L 600,690" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 600,760 L 600,775 L 600,775 L 600,790" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 600,1040 L 600,1055 L 600,1055 L 600,1070" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+</svg>

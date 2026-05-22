@@ -1,0 +1,333 @@
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="BladeX Backend Analysis" version="24.0.0" type="device">
+  <diagram id="backend-call-chain" name="Backend Call Chain Sequence">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="BladeX 核心调用链时序图（用户新增为例）" style="text;html=1;align=center;valign=middle;fontStyle=1;fontSize=18;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Lifelines (top nodes) ===== -->
+        <!-- Client -->
+        <mxCell id="client-box" value="前端客户端" style="rounded=1;whiteSpace=0;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=12;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- OAuth2 Filter -->
+        <mxCell id="filter-box" value="OAuth2 Filter&lt;br&gt;BladeAuthFilter" style="rounded=1;whiteSpace=0;html=1;fillColor=#FCE4EC;strokeColor=#880E4F;fontSize=11;fontColor=#880E4F;" vertex="1" parent="1">
+          <mxGeometry x="220" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Controller -->
+        <mxCell id="ctrl-box" value="UserController&lt;br&gt;@RestController" style="rounded=1;whiteSpace=0;html=1;fillColor=#42A5F5;strokeColor=#1565C0;fontSize=12;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="390" y="80" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Service -->
+        <mxCell id="svc-box" value="UserServiceImpl&lt;br&gt;@Transactional" style="rounded=1;whiteSpace=0;html=1;fillColor=#66BB6A;strokeColor=#2E7D32;fontSize=12;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="580" y="80" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Cross Service -->
+        <mxCell id="cross-svc-box" value="IUserDeptService&lt;br&gt;跨服务调用" style="rounded=1;whiteSpace=0;html=1;fillColor=#81C784;strokeColor=#1B5E20;fontSize=11;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="770" y="80" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Mapper -->
+        <mxCell id="mapper-box" value="UserMapper&lt;br&gt;BaseMapper&lt;User&gt;" style="rounded=1;whiteSpace=0;html=1;fillColor=#FFA726;strokeColor=#E65100;fontSize=12;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="950" y="80" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Database -->
+        <mxCell id="db-box" value="MySQL 数据库&lt;br&gt;blade_user 等" style="rounded=1;whiteSpace=0;html=1;fillColor=#BDBDBD;strokeColor=#424242;fontSize=12;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="80" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Lifeline vertical lines ===== -->
+        <mxCell id="ll-client" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" as="geometry">
+            <mxPoint x="110" y="120" as="sourcePoint" />
+            <mxPoint x="110" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-filter" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#880E4F;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" as="geometry">
+            <mxPoint x="280" y="120" as="sourcePoint" />
+            <mxPoint x="280" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-ctrl" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#1565C0;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" as="geometry">
+            <mxPoint x="460" y="120" as="sourcePoint" />
+            <mxPoint x="460" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-svc" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#2E7D32;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" as="geometry">
+            <mxPoint x="650" y="120" as="sourcePoint" />
+            <mxPoint x="650" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-cross-svc" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#1B5E20;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" as="geometry">
+            <mxPoint x="835" y="120" as="sourcePoint" />
+            <mxPoint x="835" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-mapper" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#E65100;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" as="geometry">
+            <mxPoint x="1020" y="120" as="sourcePoint" />
+            <mxPoint x="1020" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ll-db" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#424242;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" as="geometry">
+            <mxPoint x="1205" y="120" as="sourcePoint" />
+            <mxPoint x="1205" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Activation boxes ===== -->
+        <mxCell id="act-ctrl" value="" style="rounded=0;whiteSpace=0;html=1;fillColor=#BBDEFB;strokeColor=#1565C0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="140" width="10" height="900" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-svc" value="" style="rounded=0;whiteSpace=0;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="645" y="180" width="10" height="820" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-cross-svc" value="" style="rounded=0;whiteSpace=0;html=1;fillColor=#DCEDC8;strokeColor=#1B5E20;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="400" width="10" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-mapper" value="" style="rounded=0;whiteSpace=0;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="280" width="10" height="600" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act-db" value="" style="rounded=0;whiteSpace=0;html=1;fillColor=#E0E0E0;strokeColor=#424242;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="300" width="10" height="560" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Messages ===== -->
+        <!-- 1. Client -> Filter -->
+        <mxCell id="msg1" value="1. POST /system/user/submit&lt;br&gt;携带 User JSON 数据" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#000000;" edge="1" parent="1" target="filter-box">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="145" as="sourcePoint" />
+            <mxPoint x="220" y="145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 2. Filter -> Controller -->
+        <mxCell id="msg2" value="2. 请求放行（公开接口）&lt;br&gt;或注入 BladeUser" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#880E4F;strokeWidth=2;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#880E4F;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="155" as="sourcePoint" />
+            <mxPoint x="455" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 3. Controller -> Service: submit() -->
+        <mxCell id="msg3" value="3. submit(User)&lt;br&gt;source: UserController.submit()" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=2;entryX=0;entryY=0.1;entryDx=0;entryDy=0;fontSize=11;fontColor=#2E7D32;" edge="1" parent="1" target="act-svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="465" y="180" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 4. Service validates tenant limit -->
+        <mxCell id="msg4" value="4. 校验租户账号上限&lt;br&gt;BladeTenantProperties.getLimit()" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=1;entryX=1;entryY=0.15;entryDx=0;entryDy=0;fontSize=10;fontColor=#2E7D32;" edge="1" parent="1" source="act-svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="220" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="700" y="220" />
+              <mxPoint x="700" y="240" />
+              <mxPoint x="655" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 5. Service validates uniqueness -->
+        <mxCell id="msg5" value="5. selectCount(account/phone)&lt;br&gt;校验账号/手机号唯一性" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=2;entryX=0;entryY=0.2;entryDx=0;entryDy=0;fontSize=11;fontColor=#2E7D32;" edge="1" parent="1" target="act-mapper">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="280" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 6. Mapper -> DB -->
+        <mxCell id="msg6" value="6. SELECT COUNT(*) FROM blade_user&lt;br&gt;WHERE account = ? AND is_deleted = 0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=2;entryX=0;entryY=0.05;entryDx=0;entryDy=0;fontSize=10;fontColor=#E65100;" edge="1" parent="1" target="act-db">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1025" y="300" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return 6 -->
+        <mxCell id="ret6" value="count=0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=1;dashed=1;fontSize=10;fontColor=#E65100;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1015" y="330" as="sourcePoint" />
+            <mxPoint x="1200" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return 5 -->
+        <mxCell id="ret5" value="校验通过" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=1;dashed=1;fontSize=10;fontColor=#E65100;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1015" y="350" as="sourcePoint" />
+            <mxPoint x="655" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 7. Service encrypts password -->
+        <mxCell id="msg7" value="7. DigestUtil.encrypt(password)&lt;br&gt;BCrypt 密码加密" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=1;entryX=1;entryY=0.4;entryDx=0;entryDy=0;fontSize=10;fontColor=#2E7D32;" edge="1" parent="1" source="act-svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="380" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="700" y="380" />
+              <mxPoint x="700" y="400" />
+              <mxPoint x="655" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 8. Service -> UserDeptService -->
+        <mxCell id="msg8" value="8. saveBatch(userDeptList)&lt;br&gt;source: IUserDeptService" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1B5E20;strokeWidth=2;entryX=0;entryY=0.05;entryDx=0;entryDy=0;fontSize=11;fontColor=#1B5E20;" edge="1" parent="1" target="act-cross-svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="400" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- UserDeptService -> Mapper -->
+        <mxCell id="msg8b" value="INSERT blade_user_dept" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=2;entryX=0;entryY=0.1;entryDx=0;entryDy=0;fontSize=10;fontColor=#E65100;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="420" as="sourcePoint" />
+            <mxPoint x="1015" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return cross service -->
+        <mxCell id="ret8" value="保存成功" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1B5E20;strokeWidth=1;dashed=1;fontSize=10;fontColor=#1B5E20;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="510" as="sourcePoint" />
+            <mxPoint x="655" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 9. Service -> Mapper: save(user) -->
+        <mxCell id="msg9" value="9. insert(user)&lt;br&gt;source: BaseMapper.insert()" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#E65100;" edge="1" parent="1" target="act-mapper">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="540" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 10. Mapper -> DB -->
+        <mxCell id="msg10" value="10. INSERT INTO blade_user&lt;br&gt;(id, tenant_id, account, password, ...)&lt;br&gt;VALUES (ASSIGN_ID, ?, ?, ?, ...)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=2;entryX=0;entryY=0.55;entryDx=0;entryDy=0;fontSize=10;fontColor=#E65100;" edge="1" parent="1" target="act-db">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1025" y="560" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return 10 -->
+        <mxCell id="ret10" value="rows=1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=1;dashed=1;fontSize=10;fontColor=#E65100;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1015" y="600" as="sourcePoint" />
+            <mxPoint x="1200" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return 9 -->
+        <mxCell id="ret9" value="true" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E65100;strokeWidth=1;dashed=1;fontSize=10;fontColor=#E65100;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1015" y="620" as="sourcePoint" />
+            <mxPoint x="655" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 11. Clear cache -->
+        <mxCell id="msg11" value="11. CacheUtil.clear(USER_CACHE)&lt;br&gt;清除用户缓存" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=1;entryX=1;entryY=0.7;entryDx=0;entryDy=0;fontSize=10;fontColor=#2E7D32;" edge="1" parent="1" source="act-svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="650" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="700" y="650" />
+              <mxPoint x="700" y="670" />
+              <mxPoint x="655" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 12. Return to Controller -->
+        <mxCell id="msg12" value="12. return true / R.data(userVO)&lt;br&gt;source: UserServiceImpl.submit()" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2E7D32;strokeWidth=2;entryX=1;entryY=0.7;entryDx=0;entryDy=0;fontSize=11;fontColor=#2E7D32;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="645" y="720" as="sourcePoint" />
+            <mxPoint x="465" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 13. Controller returns R<T> -->
+        <mxCell id="msg13" value="13. R.data(user)&lt;br&gt;统一响应封装" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;entryX=1;entryY=0.85;entryDx=0;entryDy=0;fontSize=11;fontColor=#1565C0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="455" y="800" as="sourcePoint" />
+            <mxPoint x="280" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 14. Response to Client -->
+        <mxCell id="msg14" value="14. HTTP 200&lt;br&gt;{code:200, success:true, data:{...}, msg:&quot;操作成功&quot;}" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2;fontSize=11;fontColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="840" as="sourcePoint" />
+            <mxPoint x="110" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Transaction boundary note -->
+        <mxCell id="txn-note" value="========== @Transactional(rollbackFor = Exception.class) 事务边界 ==========" style="text;html=1;align=left;valign=middle;fontStyle=1;fontSize=10;fontColor=#E65100;spacing=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="170" width="450" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Source file annotations -->
+        <mxCell id="src-ctrl" value="源文件: modules/system/controller/UserController.java" style="text;html=1;align=left;valign=middle;fontSize=9;fontColor=#9E9E9E;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1000" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="src-svc" value="源文件: modules/system/service/impl/UserServiceImpl.java" style="text;html=1;align=left;valign=middle;fontSize=9;fontColor=#9E9E9E;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1020" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="src-mapper" value="源文件: modules/system/mapper/UserMapper.java" style="text;html=1;align=left;valign=middle;fontSize=9;fontColor=#9E9E9E;" vertex="1" parent="1">
+          <mxGeometry x="950" y="1040" width="250" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-bg" value="" style="rounded=1;whiteSpace=0;html=1;fillColor=#F5F5F5;strokeColor=#9E9E9E;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="140" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="图例" style="text;html=1;align=center;valign=middle;fontStyle=1;fontSize=12;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="145" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-sync" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry x="1150" y="175" width="30" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-sync-t" value="同步调用" style="text;html=1;align=left;valign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="172" width="80" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ret" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry x="1150" y="195" width="30" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ret-t" value="返回值" style="text;html=1;align=left;valign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="192" width="80" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-act" value="" style="rounded=0;whiteSpace=0;html=1;fillColor=#BBDEFB;strokeColor=#1565C0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="215" width="10" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-act-t" value="激活期" style="text;html=1;align=left;valign=middle;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="212" width="80" height="15" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

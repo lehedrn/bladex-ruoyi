@@ -1,0 +1,224 @@
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="contract-agent" version="24.0.0" type="device">
+  <diagram id="contract-errorcode-mapping" name="错误码映射图">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="title" value="错误码映射图" style="text;html=1;strokeColor=#333333;fillColor=#DAE8FC;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="530" y="20" width="340" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 左侧：后端错误码 -->
+        <mxCell id="be-err-group" value="后端错误来源" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="30" y="90" width="350" height="480" as="geometry" />
+        </mxCell>
+
+        <!-- 后端错误节点 -->
+        <mxCell id="be-r-fail" value="R.fail(String)\nHTTP 200 + {code!=200, msg}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="50" y="110" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="be-service" value="ServiceException\nHTTP 200 + 中文错误消息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="50" y="175" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="be-oauth" value="OAuth2 异常\nHTTP 状态码 + error_description" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="50" y="240" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="be-401" value="401 Unauthorized\nToken 无效/过期" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="50" y="305" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="be-500" value="500 Server Error\n服务异常/运行时异常" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="50" y="370" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="be-403" value="403 Forbidden\n权限不足" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="50" y="435" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 中间：映射关系 -->
+        <mxCell id="map-group" value="映射关系" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="420" y="90" width="300" height="480" as="geometry" />
+        </mxCell>
+
+        <mxCell id="map1" value="✅ 响应拦截器\n!=200 → ElMessage.error" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="440" y="110" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="map2" value="✅ 同上\nmsg 直接展示" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="440" y="175" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="map3" value="✅ >2000 → 显示 error_description\n其他 → ElMessage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="440" y="240" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="map4" value="✅ 自动刷新 Token\n刷新失败 → 清除 → 跳转 /login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="440" y="305" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="map5" value="✅ ElMessage 弹窗\n业务代码自行处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="440" y="370" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="map6" value="⚠️ 无专门处理\n走一般错误路径" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E53935;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="440" y="435" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 右侧：前端处理 -->
+        <mxCell id="fe-err-group" value="前端处理方式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="760" y="90" width="600" height="480" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fe-axios" value="Axios 响应拦截器\n(axios.js:100-220)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="900" y="100" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fe-el" value="ElMessage.error()\n统一错误弹窗" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="780" y="140" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-login" value="清除 Token → 跳转 /login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="780" y="200" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-refresh" value="自动 Token 刷新\n并发请求合并（isRefreshing 锁）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="780" y="260" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-biz" value="业务组件自行判断\nresponse.data.code !== 200" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="780" y="320" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-logs" value="前端错误日志\nFE-030: localStorage 持久化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="780" y="380" width="180" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 风险点 -->
+        <mxCell id="risk-group" value="风险点（⚠️）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="780" y="445" width="560" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="risk1" value="1. 后端 R.fail() 在 HTTP 200 下返回 → 拦截器不拦截 → 需业务代码自行判断 code" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#C62828" parent="1" vertex="1">
+          <mxGeometry x="800" y="460" width="520" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="risk2" value="2. validateStatus 设置 200-500 为有效 → HTTP 500 不会触发网络错误 → 依赖业务代码处理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#C62828" parent="1" vertex="1">
+          <mxGeometry x="800" y="485" width="520" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="risk3" value="3. 403 无差异化处理 → 权限不足时与一般错误同等处理 → 用户体验不佳" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#C62828" parent="1" vertex="1">
+          <mxGeometry x="800" y="510" width="520" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="risk4" value="4. 后端错误消息硬编码中文 → 前端国际化（i18n）无法翻译 → 多语言场景下显示中文" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#C62828" parent="1" vertex="1">
+          <mxGeometry x="800" y="535" width="520" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 连线：后端 → 映射 -->
+        <mxCell id="conn1" style="endArrow=classic;html=1;strokeColor=#4CAF50;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="135" as="sourcePoint" />
+            <mxPoint x="440" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn2" style="endArrow=classic;html=1;strokeColor=#4CAF50;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="200" as="sourcePoint" />
+            <mxPoint x="440" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn3" style="endArrow=classic;html=1;strokeColor=#4CAF50;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="265" as="sourcePoint" />
+            <mxPoint x="440" y="265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn4" style="endArrow=classic;html=1;strokeColor=#E53935;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="330" as="sourcePoint" />
+            <mxPoint x="440" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn5" style="endArrow=classic;html=1;strokeColor=#E53935;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="395" as="sourcePoint" />
+            <mxPoint x="440" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn6" style="endArrow=classic;html=1;strokeColor=#E53935;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="460" as="sourcePoint" />
+            <mxPoint x="440" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 连线：映射 → 前端 -->
+        <mxCell id="conn7" style="endArrow=classic;html=1;strokeColor=#F9A825;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="135" as="sourcePoint" />
+            <mxPoint x="780" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn8" style="endArrow=classic;html=1;strokeColor=#E53935;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="330" as="sourcePoint" />
+            <mxPoint x="780" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn9" style="endArrow=classic;html=1;strokeColor=#F9A825;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="395" as="sourcePoint" />
+            <mxPoint x="780" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 后端典型错误消息 -->
+        <mxCell id="be-msg-group" value="后端典型错误消息示例" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="30" y="600" width="350" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="msg1" value="• 当前租户已到最大账号额度!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="45" y="620" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msg2" value="• 当前用户 [xxx] 已存在!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="45" y="645" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msg3" value="• 无权配置超管角色!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="45" y="670" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msg4" value="• 菜单名或编号已存在!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="45" y="695" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msg5" value="• 不能删除本账号!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="45" y="720" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msg6" value="• 原密码不正确!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="45" y="745" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msg7" value="• 请先删除子节点!" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="45" y="770" width="300" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 前端错误处理清单 -->
+        <mxCell id="fe-list-group" value="前端错误处理清单" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="420" y="600" width="300" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fl1" value="• HTTP 401 → 自动刷新 Token" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="435" y="620" width="270" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="fl2" value="• OAuth2 错误(>2000) → 显示 error_description" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="435" y="645" width="270" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="fl3" value="• HTTP !=200 → ElMessage 弹窗" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="435" y="670" width="270" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="fl4" value="• 网络错误 → NProgress.done + reject" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="435" y="695" width="270" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="fl5" value="• 业务 code!=200 → 组件自行处理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="435" y="720" width="270" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="fl6" value="• 错误日志 → sendLogs 上报后端" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="435" y="745" width="270" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="fl7" value="• 超时 10s → 网络错误处理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="435" y="770" width="270" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 建议 -->
+        <mxCell id="suggest" value="建议：增加 OAuth2 错误码 → 前端 i18n key 的映射层，实现错误消息多语言化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="760" y="600" width="600" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

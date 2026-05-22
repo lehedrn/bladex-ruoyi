@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1300" viewBox="0 0 1400 1300">
+<defs>
+  <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#424242"/>
+  </marker>
+</defs>
+  <rect x="60" y="40" width="120" height="40" rx="5" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
+  <text x="120" y="60" font-family="Arial, sans-serif" font-size="13" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">用户</text>
+  <rect x="240" y="40" width="140" height="40" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="310" y="60" font-family="Arial, sans-serif" font-size="12" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">前端页面</text>
+  <rect x="440" y="40" width="150" height="40" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="515" y="60" font-family="Arial, sans-serif" font-size="12" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Pinia userStore</text>
+  <rect x="650" y="40" width="130" height="40" rx="5" fill="#f5f5f5" stroke="#666666" stroke-width="1"/>
+  <text x="715" y="60" font-family="Arial, sans-serif" font-size="12" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Axios/HTTP</text>
+  <rect x="840" y="40" width="150" height="40" rx="5" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
+  <text x="915" y="60" font-family="Arial, sans-serif" font-size="12" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">LoginController</text>
+  <rect x="1050" y="40" width="140" height="40" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="1"/>
+  <text x="1120" y="60" font-family="Arial, sans-serif" font-size="12" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">LoginService</text>
+  <rect x="1050" y="280" width="140" height="40" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="1"/>
+  <text x="1120" y="300" font-family="Arial, sans-serif" font-size="12" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Security\nAuthManager</text>
+  <rect x="1250" y="40" width="100" height="40" rx="5" fill="#b3e5fc" stroke="#0288d1" stroke-width="1"/>
+  <text x="1300" y="60" font-family="Arial, sans-serif" font-size="13" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">Redis</text>
+  <text x="140" y="110" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">1. 请求验证码图片</text>
+  <text x="140" y="155" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">2. 输入用户名/密码/验证码</text>
+  <text x="330" y="195" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">3. login(formData)</text>
+  <text x="530" y="245" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">4. RSA 加密密码</text>
+  <text x="530" y="295" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">5. POST /login</text>
+  <text x="930" y="350" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">6. login(username, password)</text>
+  <text x="1150" y="395" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">6.1 validateCaptcha()</text>
+  <text x="1150" y="455" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">6.2 loginPreCheck() IP黑名单/长度校验</text>
+  <text x="1150" y="520" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="bold" dominant-baseline="middle">6.3 AuthenticationManager.authenticate()</text>
+  <text x="1150" y="575" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">6.3.1 loadUserByUsername() 查询用户+密码验证(BCrypt)</text>
+  <text x="1150" y="635" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">6.3.2 getMenuPermission()</text>
+  <text x="1150" y="700" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">6.4 AsyncManager 异步记录登录日志</text>
+  <text x="1150" y="760" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="bold" dominant-baseline="middle">7. createToken() 生成UUID + 写入Redis(login_tokens:{uuid})</text>
+  <text x="1150" y="810" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">7.1 生成 JWT(HS512, 含uuid+username)</text>
+  <text x="800" y="870" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">8. AjaxResult.ok({token})</text>
+  <text x="530" y="930" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">9. code=200, 解包获取 token</text>
+  <text x="330" y="990" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">10. setToken() 写入 Cookie</text>
+  <text x="330" y="1050" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">11. getInfo() 获取 roles/permissions</text>
+  <text x="330" y="1110" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="normal" dominant-baseline="middle">12. getRouters() 获取动态路由</text>
+  <text x="330" y="1170" font-family="Arial, sans-serif" font-size="11" fill="#000000" text-anchor="left" font-weight="bold" dominant-baseline="middle">13. filterAsyncRouter() + addRoute()</text>
+  <text x="100" y="82" font-family="Arial, sans-serif" font-size="14" fill="#6c8ebf" text-anchor="center" font-weight="bold" dominant-baseline="middle">前端流程</text>
+  <text x="880" y="322" font-family="Arial, sans-serif" font-size="14" fill="#82b366" text-anchor="center" font-weight="bold" dominant-baseline="middle">后端流程</text>
+  <text x="100" y="952" font-family="Arial, sans-serif" font-size="14" fill="#6c8ebf" text-anchor="center" font-weight="bold" dominant-baseline="middle">认证完成</text>
+  <path d="M 310,80 L 805,80 L 805,40 L 1300,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 120,80 L 215,80 L 215,40 L 310,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 310,80 L 412,80 L 412,40 L 515,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 515,80 L 515,60 L 515,60 L 515,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 515,80 L 715,80 L 715,40 L 915,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 915,80 L 1018,80 L 1018,40 L 1120,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,80 L 1210,80 L 1210,40 L 1300,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,80 L 1120,60 L 1120,60 L 1120,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,80 L 1120,180 L 1120,180 L 1120,280" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,320 L 1120,300 L 1120,300 L 1120,280" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,320 L 1120,300 L 1120,300 L 1120,280" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,80 L 1210,80 L 1210,40 L 1300,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-dasharray="5,5" stroke-linejoin="round"/>
+  <path d="M 1120,80 L 1210,80 L 1210,40 L 1300,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,80 L 1120,60 L 1120,60 L 1120,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 1120,80 L 1018,80 L 1018,40 L 915,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 915,80 L 715,80 L 715,40 L 515,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 515,80 L 515,60 L 515,60 L 515,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 515,80 L 715,80 L 715,40 L 915,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 515,80 L 715,80 L 715,40 L 915,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <path d="M 515,80 L 515,60 L 515,60 L 515,40" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+</svg>

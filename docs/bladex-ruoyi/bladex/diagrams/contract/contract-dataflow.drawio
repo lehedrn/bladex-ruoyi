@@ -1,0 +1,217 @@
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="contract-agent" version="24.0.0" type="device">
+  <diagram id="contract-dataflow" name="数据流对照图">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="title" value="前后端数据流对照图" style="text;html=1;strokeColor=#333333;fillColor=#DAE8FC;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="520" y="20" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 左侧：前端 -->
+        <mxCell id="fe-group" value="前端（Saber3）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="30" y="90" width="400" height="500" as="geometry" />
+        </mxCell>
+
+        <!-- 前端组件 -->
+        <mxCell id="fe-login" value="登录页\npage/login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="50" y="110" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-user" value="用户管理页\nviews/system/user" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="50" y="175" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-menu" value="菜单管理页\nviews/system/menu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="50" y="240" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-role" value="角色管理页\nviews/system/role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="50" y="305" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-dept" value="部门管理页\nviews/system/dept" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="50" y="370" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-flow" value="工作流页面\nviews/flow/*" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="50" y="435" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-job" value="定时任务页面\nviews/job/*" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;fontSize=11" parent="1" vertex="1">
+          <mxGeometry x="50" y="500" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 前端 API 层 -->
+        <mxCell id="fe-api-user" value="api/user.js\n14个认证接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#42A5F5;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="230" y="110" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-api-suser" value="api/system/user.js\n17个用户接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#42A5F5;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="230" y="175" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-api-smenu" value="api/system/menu.js\n11个菜单接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#42A5F5;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="230" y="240" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-api-srole" value="api/system/role.js\n10个角色接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#42A5F5;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="230" y="305" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-api-sdept" value="api/system/dept.js\n8个部门接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#42A5F5;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="230" y="370" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-api-flow" value="api/flow/flow.js\napi/work/work.js\n22个流程接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#42A5F5;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="230" y="435" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-api-job" value="api/job/jobinfo.js\napi/job/jobserver.js\n14个任务接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90CAF9;strokeColor=#42A5F5;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="230" y="500" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 前端→API 连线 -->
+        <mxCell id="fe-login-api" style="endArrow=classic;html=1;strokeColor=#1976D2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="135" as="sourcePoint" />
+            <mxPoint x="230" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fe-user-api" style="endArrow=classic;html=1;strokeColor=#1976D2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="200" as="sourcePoint" />
+            <mxPoint x="230" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fe-menu-api" style="endArrow=classic;html=1;strokeColor=#1976D2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="265" as="sourcePoint" />
+            <mxPoint x="230" y="265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fe-role-api" style="endArrow=classic;html=1;strokeColor=#1976D2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="330" as="sourcePoint" />
+            <mxPoint x="230" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fe-dept-api" style="endArrow=classic;html=1;strokeColor=#1976D2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="395" as="sourcePoint" />
+            <mxPoint x="230" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fe-flow-api" style="endArrow=classic;html=1;strokeColor=#1976D2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="460" as="sourcePoint" />
+            <mxPoint x="230" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fe-job-api" style="endArrow=classic;html=1;strokeColor=#1976D2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="525" as="sourcePoint" />
+            <mxPoint x="230" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 中间：代理/网关 -->
+        <mxCell id="proxy" value="代理层\nVite Proxy / Nginx\n/api → 重写去除前缀\nBlade-Auth: bearer token\nTenant-Id: 租户头" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="510" y="200" width="180" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- API → Proxy 连线 -->
+        <mxCell id="api-proxy" style="endArrow=classic;html=1;strokeColor=#F9A825;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="300" as="sourcePoint" />
+            <mxPoint x="510" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 右侧：后端 -->
+        <mxCell id="be-group" value="后端（BladeX 4.8.0）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="770" y="90" width="580" height="500" as="geometry" />
+        </mxCell>
+
+        <!-- 后端 Controller -->
+        <mxCell id="be-auth" value="认证 Controller\nPOST /blade-auth/oauth/token\nGET /blade-auth/oauth/captcha\nGET /blade-auth/oauth/user-info\nGET /blade-auth/oauth/logout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="790" y="110" width="200" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="be-user" value="UserController\nGET /blade-system/user/page\nPOST /blade-system/user/submit\nPOST /blade-system/user/update\nPOST /blade-system/user/remove\n+ 19个其他接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="790" y="200" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="be-menu" value="MenuController\nGET /blade-system/menu/list\nGET /blade-system/menu/routes\nGET /blade-system/menu/buttons\nPOST /blade-system/menu/submit\n+ 13个其他接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="1010" y="110" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="be-role" value="RoleController\nGET /blade-system/role/list\nPOST /blade-system/role/grant\nPOST /blade-system/role/submit\n+ 6个其他接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="1010" y="220" width="200" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="be-dept" value="DeptController\nGET /blade-system/dept/list\nGET /blade-system/dept/tree\nPOST /blade-system/dept/submit\n+ 6个其他接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="1010" y="315" width="200" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="be-flow" value="WorkController / FlowModelController\nGET /blade-flow/work/todo-list\nPOST /blade-flow/work/complete-task\nGET /blade-flow/model/list\n+ 19个其他接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="790" y="310" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="be-job" value="JobInfoController / JobServerController\nGET /blade-job/job-info/list\nPOST /blade-job/job-info/submit\nGET /blade-job/job-server/list\n+ 10个其他接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="790" y="420" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="be-other" value="其他 Controller\nTenant / Dict / Post / Param\nRegion / RecordData / Notice\nOss / Attach / Sms / Code" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=10" parent="1" vertex="1">
+          <mxGeometry x="1010" y="410" width="200" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Proxy → Backend 连线 -->
+        <mxCell id="proxy-auth" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="150" as="sourcePoint" />
+            <mxPoint x="790" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proxy-user" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="240" as="sourcePoint" />
+            <mxPoint x="790" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proxy-menu" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="160" as="sourcePoint" />
+            <mxPoint x="1010" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proxy-role" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="310" as="sourcePoint" />
+            <mxPoint x="1010" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proxy-dept" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="350" as="sourcePoint" />
+            <mxPoint x="1010" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proxy-flow" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="380" as="sourcePoint" />
+            <mxPoint x="790" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proxy-job" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="420" as="sourcePoint" />
+            <mxPoint x="790" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="proxy-other" style="endArrow=classic;html=1;strokeColor=#2E7D32;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="450" as="sourcePoint" />
+            <mxPoint x="1010" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 后端 → 响应 连线 -->
+        <mxCell id="be-response" value="R&lt;T&gt; 响应体\n{code, success, data, msg}" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666" parent="1" vertex="1">
+          <mxGeometry x="700" y="610" width="250" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 底部说明 -->
+        <mxCell id="note1" value="数据流路径：前端页面 → api/*.js → Axios 拦截器（注入 Token/Tenant-Id/AES 加密） → 代理层 → 后端 Controller → Service → MyBatis-Plus → 数据库" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666" parent="1" vertex="1">
+          <mxGeometry x="30" y="620" width="1300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="响应流路径：数据库 → MyBatis-Plus → Service → Wrapper 转换 → Controller(R&lt;T&gt;) → Axios 响应拦截器（401 刷新/错误弹窗） → 前端页面" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666" parent="1" vertex="1">
+          <mxGeometry x="30" y="650" width="1300" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

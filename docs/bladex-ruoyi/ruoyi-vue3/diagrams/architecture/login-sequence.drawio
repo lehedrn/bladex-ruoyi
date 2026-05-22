@@ -1,0 +1,342 @@
+<mxfile host="ruoyi-architecture-analysis">
+  <diagram id="login-sequence" name="登录认证时序图">
+    <mxGraphModel dx="1422" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 参与方 -->
+        <mxCell id="2" value="用户" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="前端页面" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="240" y="40" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Pinia userStore" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="440" y="40" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Axios/HTTP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="40" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="LoginController" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="840" y="40" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="LoginService" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="40" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Security\nAuthManager" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="280" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Redis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b3e5fc;strokeColor=#0288d1;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1250" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 生命线 -->
+        <mxCell id="10" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" parent="1" source="2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="80" as="sourcePoint" />
+            <mxPoint x="120" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" parent="1" source="3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="80" as="sourcePoint" />
+            <mxPoint x="310" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" parent="1" source="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="515" y="80" as="sourcePoint" />
+            <mxPoint x="515" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" parent="1" source="5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="715" y="80" as="sourcePoint" />
+            <mxPoint x="715" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" parent="1" source="6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="915" y="80" as="sourcePoint" />
+            <mxPoint x="915" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" parent="1" source="7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="80" as="sourcePoint" />
+            <mxPoint x="1120" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" parent="1" source="9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1300" y="80" as="sourcePoint" />
+            <mxPoint x="1300" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 1: 获取验证码 -->
+        <mxCell id="17" value="1. 请求验证码图片" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="140" y="100" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="3" target="9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="115" as="sourcePoint" />
+            <mxPoint x="1250" y="115" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1250" y="115" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 2: 用户输入并点击登录 -->
+        <mxCell id="19" value="2. 输入用户名/密码/验证码" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="140" y="145" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="2" target="3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="160" as="sourcePoint" />
+            <mxPoint x="240" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 3: 前端 login action -->
+        <mxCell id="21" value="3. login(formData)" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="330" y="185" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="200" as="sourcePoint" />
+            <mxPoint x="440" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 4: RSA 加密密码 -->
+        <mxCell id="23" value="4. RSA 加密密码" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="530" y="235" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="4" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="515" y="250" as="sourcePoint" />
+            <mxPoint x="555" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="555" y="240" />
+              <mxPoint x="555" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 5: POST /login -->
+        <mxCell id="25" value="5. POST /login" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="530" y="285" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="515" y="300" as="sourcePoint" />
+            <mxPoint x="840" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 6: 调用 LoginService -->
+        <mxCell id="27" value="6. login(username, password)" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="930" y="340" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="6" target="7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990" y="355" as="sourcePoint" />
+            <mxPoint x="1050" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 6.1: 验证码校验 -->
+        <mxCell id="29" value="6.1 validateCaptcha()" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="385" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="7" target="9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="400" as="sourcePoint" />
+            <mxPoint x="1250" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 6.2: 前置校验 -->
+        <mxCell id="31" value="6.2 loginPreCheck() IP黑名单/长度校验" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="445" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="7" target="7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="460" as="sourcePoint" />
+            <mxPoint x="1160" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1160" y="450" />
+              <mxPoint x="1160" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 6.3: Spring Security 认证 -->
+        <mxCell id="33" value="6.3 AuthenticationManager.authenticate()" style="text;html=1;fontSize=11;align=left;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1150" y="510" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="7" target="8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="525" as="sourcePoint" />
+            <mxPoint x="1050" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 6.3.1: 查询用户 -->
+        <mxCell id="35" value="6.3.1 loadUserByUsername() 查询用户+密码验证(BCrypt)" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="565" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="8" target="8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1050" y="580" as="sourcePoint" />
+            <mxPoint x="1090" y="580" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1090" y="570" />
+              <mxPoint x="1090" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 6.3.2: 获取菜单权限 -->
+        <mxCell id="37" value="6.3.2 getMenuPermission()" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="625" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="8" target="8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1050" y="640" as="sourcePoint" />
+            <mxPoint x="1090" y="640" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1090" y="630" />
+              <mxPoint x="1090" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 6.4: 异步记录登录日志 -->
+        <mxCell id="39" value="6.4 AsyncManager 异步记录登录日志" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="690" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="" style="endArrow=block;html=1;strokeColor=#333333;dashed=1;" parent="1" source="7" target="9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="705" as="sourcePoint" />
+            <mxPoint x="1250" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 7: 生成 Token -->
+        <mxCell id="41" value="7. createToken() 生成UUID + 写入Redis(login_tokens:{uuid})" style="text;html=1;fontSize=11;align=left;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="1150" y="750" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="7" target="9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="765" as="sourcePoint" />
+            <mxPoint x="1250" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 7.1: 生成 JWT -->
+        <mxCell id="43" value="7.1 生成 JWT(HS512, 含uuid+username)" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="800" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="7" target="7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="815" as="sourcePoint" />
+            <mxPoint x="1160" y="815" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1160" y="805" />
+              <mxPoint x="1160" y="825" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 8: 返回 token -->
+        <mxCell id="45" value="8. AjaxResult.ok({token})" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="800" y="860" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="46" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="7" target="6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1050" y="875" as="sourcePoint" />
+            <mxPoint x="990" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 9: 响应到前端 -->
+        <mxCell id="47" value="9. code=200, 解包获取 token" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="530" y="920" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="48" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="6" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="935" as="sourcePoint" />
+            <mxPoint x="515" y="935" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 10: 存储 token -->
+        <mxCell id="49" value="10. setToken() 写入 Cookie" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="330" y="980" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="4" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="515" y="995" as="sourcePoint" />
+            <mxPoint x="555" y="995" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="555" y="985" />
+              <mxPoint x="555" y="1005" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 11: 获取用户信息 -->
+        <mxCell id="51" value="11. getInfo() 获取 roles/permissions" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1040" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="515" y="1055" as="sourcePoint" />
+            <mxPoint x="840" y="1055" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 12: 获取路由 -->
+        <mxCell id="53" value="12. getRouters() 获取动态路由" style="text;html=1;fontSize=11;align=left;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1100" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="515" y="1115" as="sourcePoint" />
+            <mxPoint x="840" y="1115" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 步骤 13: 动态注册路由 -->
+        <mxCell id="55" value="13. filterAsyncRouter() + addRoute()" style="text;html=1;fontSize=11;align=left;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="330" y="1160" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="56" value="" style="endArrow=block;html=1;strokeColor=#333333;" parent="1" source="4" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="515" y="1175" as="sourcePoint" />
+            <mxPoint x="555" y="1175" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="555" y="1165" />
+              <mxPoint x="555" y="1185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 分组标注 -->
+        <mxCell id="57" value="前端流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;fontColor=#6c8ebf;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="70" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="后端流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;fontColor=#82b366;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="840" y="310" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="认证完成" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;fontColor=#6c8ebf;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="940" width="80" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

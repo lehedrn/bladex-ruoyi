@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900">
+<defs>
+  <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#424242"/>
+  </marker>
+</defs>
+  <rect x="350" y="30" width="280" height="160" rx="5" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
+  <text x="490" y="110" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">ruoyi-admin</text>
+  <rect x="0" y="36" width="280" height="24" fill="none" stroke="none" stroke-width="1"/>
+  <text x="140" y="48" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Controller 入口层</text>
+  <rect x="0" y="60" width="280" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="140" y="70" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">RuoYiApplication (启动类)</text>
+  <rect x="0" y="80" width="280" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="140" y="90" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">application.yml / logback</text>
+  <rect x="0" y="100" width="280" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="140" y="110" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">系统/监控/通用 Controller</text>
+  <rect x="30" y="250" width="300" height="200" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="1"/>
+  <text x="180" y="350" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">ruoyi-framework</text>
+  <rect x="0" y="36" width="300" height="24" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="48" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">框架配置层</text>
+  <rect x="0" y="60" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="70" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">SecurityConfig / Filter 链</text>
+  <rect x="0" y="80" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="90" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">AOP 切面 (DataScope/Log/限流)</text>
+  <rect x="0" y="100" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="110" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Druid / MyBatis / Redis 配置</text>
+  <rect x="0" y="120" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="130" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">AsyncManager / TokenService</text>
+  <rect x="0" y="140" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="150" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">GlobalExceptionHandler</text>
+  <rect x="360" y="250" width="300" height="200" rx="5" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
+  <text x="510" y="350" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">ruoyi-system</text>
+  <rect x="0" y="36" width="300" height="24" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="48" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">业务逻辑层</text>
+  <rect x="0" y="60" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="70" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Service 接口 + 实现</text>
+  <rect x="0" y="80" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="90" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">MyBatis Mapper 接口</text>
+  <rect x="0" y="100" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="110" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Mapper XML (SQL 映射)</text>
+  <rect x="0" y="120" width="300" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="150" y="130" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">系统/监控/通知业务域</text>
+  <rect x="30" y="500" width="630" height="200" rx="5" fill="#f5f5f5" stroke="#757575" stroke-width="1"/>
+  <text x="345" y="600" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">ruoyi-common</text>
+  <rect x="0" y="36" width="630" height="24" fill="none" stroke="none" stroke-width="1"/>
+  <text x="315" y="48" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">公共基础层 (所有模块的底层依赖)</text>
+  <rect x="0" y="60" width="630" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="315" y="70" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">核心域对象: SysUser / SysRole / SysMenu / Sys</text>
+  <rect x="0" y="80" width="630" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="315" y="90" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">注解: @Log / @DataScope / @Excel / @RateLi</text>
+  <rect x="0" y="100" width="630" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="315" y="110" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">工具类: StringUtils / DateUtils / SecurityU</text>
+  <rect x="0" y="120" width="630" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="315" y="130" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">异常体系: GlobalException / ServiceException</text>
+  <rect x="0" y="140" width="630" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="315" y="150" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Filter: XssFilter / RepeatableFilter / R</text>
+  <rect x="690" y="250" width="270" height="100" rx="5" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
+  <text x="825" y="300" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">ruoyi-quartz (可选)</text>
+  <rect x="0" y="36" width="270" height="24" fill="none" stroke="none" stroke-width="1"/>
+  <text x="135" y="48" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">定时任务调度</text>
+  <rect x="0" y="60" width="270" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="135" y="70" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Quartz Job / Cron / 任务执行器</text>
+  <rect x="690" y="370" width="270" height="100" rx="5" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
+  <text x="825" y="420" font-family="Arial, sans-serif" font-size="14" fill="#424242" text-anchor="middle" dominant-baseline="middle" font-weight="bold">ruoyi-generator (可选)</text>
+  <rect x="0" y="36" width="270" height="24" fill="none" stroke="none" stroke-width="1"/>
+  <text x="135" y="48" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">代码生成器</text>
+  <rect x="0" y="60" width="270" height="20" fill="none" stroke="none" stroke-width="1"/>
+  <text x="135" y="70" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-weight="normal">Velocity 模板 / 表结构解析 / 代码生成</text>
+  <text x="350" y="732" font-family="Arial, sans-serif" font-size="11" fill="#999999" text-anchor="center" font-weight="bold" dominant-baseline="middle">Spring Boot / Security / Druid / MyBatis / Redis</text>
+  <path d="M 490,190 L 335,190 L 335,250 L 180,250" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <rect x="305" y="240" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="335" y="251" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">依赖</text>
+  <path d="M 490,190 L 490,220 L 510,220 L 510,250" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <rect x="480" y="210" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="510" y="221" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">依赖</text>
+  <path d="M 490,190 L 658,190 L 658,250 L 825,250" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-dasharray="5,5" stroke-linejoin="round"/>
+  <rect x="628" y="240" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="658" y="251" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">可选</text>
+  <path d="M 490,190 L 658,190 L 658,370 L 825,370" stroke="#999999" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-dasharray="5,5" stroke-linejoin="round"/>
+  <rect x="628" y="360" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="658" y="371" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">可选</text>
+  <path d="M 180,450 L 262,450 L 262,500 L 345,500" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <rect x="232" y="490" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="262" y="501" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">依赖</text>
+  <path d="M 510,450 L 428,450 L 428,500 L 345,500" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <rect x="398" y="490" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="428" y="501" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">依赖</text>
+  <path d="M 825,350 L 585,350 L 585,500 L 345,500" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <rect x="555" y="490" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="585" y="501" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">依赖</text>
+  <path d="M 825,470 L 585,470 L 585,500 L 345,500" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#ah)" stroke-linejoin="round"/>
+  <rect x="555" y="490" width="60" height="20" fill="#ffffff" stroke="none" rx="3"/>
+  <text x="585" y="501" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle" dominant-baseline="middle">依赖</text>
+</svg>

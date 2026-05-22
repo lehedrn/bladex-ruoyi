@@ -1,0 +1,248 @@
+<mxfile host="ruoyi-architecture-analysis">
+  <diagram id="er-diagram" name="ER 关系图">
+    <mxGraphModel dx="1422" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 核心实体 -->
+        <mxCell id="2" value="SysUser 用户" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="100" y="50" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="+ userId: Long (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+          <mxGeometry y="30" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="+ userName: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+          <mxGeometry y="54" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="+ password: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+          <mxGeometry y="74" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="+ status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+          <mxGeometry y="94" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="+ deptId: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+          <mxGeometry y="114" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="+ delFlag: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+          <mxGeometry y="134" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="9" value="SysRole 角色" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="700" y="50" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="+ roleId: Long (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
+          <mxGeometry y="30" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="+ roleName: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
+          <mxGeometry y="54" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="+ roleKey: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
+          <mxGeometry y="74" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="+ dataScope: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
+          <mxGeometry y="94" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="+ status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
+          <mxGeometry y="114" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="15" value="SysMenu 菜单" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="50" width="220" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="+ menuId: Long (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
+          <mxGeometry y="30" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="+ menuName: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
+          <mxGeometry y="54" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="+ perms: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
+          <mxGeometry y="74" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="+ menuType: String (M/C/F)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
+          <mxGeometry y="94" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="+ parentId: Long (FK 自引用)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
+          <mxGeometry y="114" width="220" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="21" value="SysDept 部门" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="400" y="320" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="+ deptId: Long (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
+          <mxGeometry y="30" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="+ deptName: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
+          <mxGeometry y="54" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="+ ancestors: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
+          <mxGeometry y="74" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="+ parentId: Long (FK 自引用)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
+          <mxGeometry y="94" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="26" value="SysPost 岗位" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="50" y="350" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="+ postId: Long (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="26" vertex="1">
+          <mxGeometry y="30" width="190" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="+ postCode: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="26" vertex="1">
+          <mxGeometry y="54" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="+ postName: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="26" vertex="1">
+          <mxGeometry y="74" width="190" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 关联表 -->
+        <mxCell id="30" value="sys_user_role (用户-角色)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="400" y="50" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="+ user_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="30" vertex="1">
+          <mxGeometry y="26" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="+ role_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="30" vertex="1">
+          <mxGeometry y="48" width="200" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="33" value="sys_role_menu (角色-菜单)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="800" y="260" width="210" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="+ role_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="33" vertex="1">
+          <mxGeometry y="26" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="+ menu_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="33" vertex="1">
+          <mxGeometry y="48" width="210" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="36" value="sys_role_dept (角色-部门)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="380" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="+ role_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
+          <mxGeometry y="26" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="+ dept_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
+          <mxGeometry y="48" width="200" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="39" value="sys_user_post (用户-岗位)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;fillColor=#fff2cc;strokeColor=#d6b656;rounded=0;shadow=0;labelBackgroundColor=none;spacing=4;spacingTop=4;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="100" y="520" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="+ user_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="39" vertex="1">
+          <mxGeometry y="26" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="+ post_id: Long (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=11;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="39" vertex="1">
+          <mxGeometry y="48" width="200" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- 关系连线 -->
+        <!-- SysUser → sys_user_role (M:N) -->
+        <mxCell id="42" value="N:M" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=0;entryY=0.5;exitX=1;exitY=0.5;rounded=0;" parent="1" source="2" target="30" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="150" as="sourcePoint" />
+            <mxPoint x="400" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- sys_user_role → SysRole (M:N) -->
+        <mxCell id="43" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=0;entryY=0.5;exitX=1;exitY=0.5;rounded=0;" parent="1" source="30" target="9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="90" as="sourcePoint" />
+            <mxPoint x="700" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- SysRole → sys_role_menu -->
+        <mxCell id="44" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=0.5;entryY=0;exitX=0.5;exitY=1;rounded=0;" parent="1" source="9" target="33" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="220" as="sourcePoint" />
+            <mxPoint x="900" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- sys_role_menu → SysMenu -->
+        <mxCell id="45" value="N:M" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=0.5;entryY=1;exitX=0.5;exitY=0;rounded=0;" parent="1" source="33" target="15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="900" y="260" as="sourcePoint" />
+            <mxPoint x="1160" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- SysUser → SysDept (N:1) -->
+        <mxCell id="46" value="N:1" style="endArrow=block;html=1;strokeColor=#333333;entryX=0.5;entryY=0;exitX=0.5;exitY=1;rounded=0;" parent="1" source="2" target="21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="250" as="sourcePoint" />
+            <mxPoint x="500" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- SysDept → sys_role_dept -->
+        <mxCell id="47" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=1;entryY=0.5;exitX=1;exitY=0.5;rounded=0;" parent="1" source="21" target="36" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="390" as="sourcePoint" />
+            <mxPoint x="650" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- sys_role_dept → SysRole -->
+        <mxCell id="48" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=0.5;entryY=1;exitX=0.5;exitY=0;rounded=0;" parent="1" source="36" target="9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="380" as="sourcePoint" />
+            <mxPoint x="800" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- SysUser → sys_user_post -->
+        <mxCell id="49" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=0.5;entryY=0;exitX=0.25;exitY=1;rounded=0;" parent="1" source="2" target="39" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="250" as="sourcePoint" />
+            <mxPoint x="200" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- sys_user_post → SysPost -->
+        <mxCell id="50" value="N:M" style="endArrow=block;startArrow=block;html=1;strokeColor=#333333;entryX=0.5;entryY=0;exitX=0.5;exitY=1;rounded=0;" parent="1" source="39" target="26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="602" as="sourcePoint" />
+            <mxPoint x="145" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 树形自引用标注 -->
+        <mxCell id="51" value="树形" style="endArrow=block;startArrow=block;html=1;strokeColor=#ab47bc;dashed=1;entryX=1;entryY=0.75;exitX=1;exitY=0.25;rounded=0;" parent="1" source="15" target="15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1270" y="70" as="sourcePoint" />
+            <mxPoint x="1310" y="130" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1310" y="70" />
+              <mxPoint x="1310" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="52" value="树形" style="endArrow=block;startArrow=block;html=1;strokeColor=#ab47bc;dashed=1;entryX=1;entryY=0.75;exitX=1;exitY=0.25;rounded=0;" parent="1" source="21" target="21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="340" as="sourcePoint" />
+            <mxPoint x="640" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="340" />
+              <mxPoint x="640" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 图例 -->
+        <mxCell id="53" value="图例" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="300" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="蓝色: 核心实体表" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="330" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="黄色: 关联表(多对多)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="355" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="56" value="实线箭头: 外键关系" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="380" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="紫色虚线: 树形自引用" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="405" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="N:M: 多对多关系" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="430" width="180" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

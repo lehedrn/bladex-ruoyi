@@ -1,0 +1,163 @@
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="BladeX Architecture Analysis" version="21.0.0" type="device">
+  <diagram id="auto-config-sequence" name="自动装配时序图">
+    <mxGraphModel dx="1422" dy="744" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="BladeX 自动装配时序图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="l1" value="Java 编译器" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=0;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="120" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l2" value="AutoFactoriesProcessor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=0;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="250" y="80" width="150" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l3" value="生成 spring.factories" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=0;strokeColor=#b08266;fillColor=#e8d5c4;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="480" y="80" width="150" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l4" value="Spring Boot 启动" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=0;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="710" y="80" width="130" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l5" value="AutoConfiguration\nImportSelector" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=0;strokeColor=#b85682;fillColor=#f5d0e0;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="920" y="80" width="140" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l6" value="Bean 注册\n容器" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="1140" y="80" width="100" height="780" as="geometry" />
+        </mxCell>
+
+        <!-- Phase 1: Compile Time -->
+        <mxCell id="phase1" value="编译期（编译阶段）" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="130" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 1: 扫描注解 -->
+        <mxCell id="m1" value="扫描 @AutoConfiguration / @Configuration" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l1" target="l2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="175" as="sourcePoint" />
+            <mxPoint x="250" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1_label" value="1. 扫描注解" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="120" y="165" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 2: 生成 spring.factories -->
+        <mxCell id="m2" value="生成 spring.factories / AutoConfiguration.imports" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l2" target="l3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="325" y="210" as="sourcePoint" />
+            <mxPoint x="480" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2_label" value="2. 生成装配元数据" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="340" y="200" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 3: 写入 JAR -->
+        <mxCell id="m3" value="写入 JAR META-INF/" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l3" target="l3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="250" as="sourcePoint" />
+            <mxPoint x="555" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3_label" value="3. 写入 JAR" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="500" y="260" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Phase 2: Runtime -->
+        <mxCell id="phase2" value="运行期（启动阶段）" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="310" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 4: Spring Boot 读取 spring.factories -->
+        <mxCell id="m4" value="读取 spring.factories" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l4" target="l5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775" y="355" as="sourcePoint" />
+            <mxPoint x="920" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4_label" value="4. 读取装配元数据" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="790" y="345" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 5: 过滤条件装配 -->
+        <mxCell id="m5" value="@ConditionalOnXxx 过滤" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l5" target="l5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="395" as="sourcePoint" />
+            <mxPoint x="990" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5_label" value="5. 条件过滤" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="940" y="410" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 6: 按顺序注册 Bean -->
+        <mxCell id="m6" value="按 @AutoConfigureBefore/After 排序" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l5" target="l6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="470" as="sourcePoint" />
+            <mxPoint x="1140" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6_label" value="6. 排序" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1020" y="460" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 7: 注册 Bean -->
+        <mxCell id="m7" value="@Bean 方法执行" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l6" target="l6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1190" y="510" as="sourcePoint" />
+            <mxPoint x="1190" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7_label" value="7. 注册 Bean" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="1150" y="530" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 8: 加载 blade-*.yml -->
+        <mxCell id="m8" value="@BladePropertySource 加载默认 yml" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l4" target="l4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775" y="590" as="sourcePoint" />
+            <mxPoint x="775" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8_label" value="8. 加载默认配置" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="720" y="610" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Msg 9: 应用就绪 -->
+        <mxCell id="m9" value="应用就绪" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;strokeColor=#000000" edge="1" parent="1" source="l4" target="l4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775" y="680" as="sourcePoint" />
+            <mxPoint x="775" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9_label" value="9. 应用就绪" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="730" y="700" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Notes -->
+        <mxCell id="note1" value="blade-core-auto 模块中的&#10;AutoFactoriesProcessor 是&#10;Java 注解处理器（APT）&#10;在编译期扫描所有类并生成&#10;spring.factories 文件" style="shape=note;whiteSpace=wrap;html=1;rounded=0;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;align=left" vertex="1" parent="1">
+          <mxGeometry x="50" y="340" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note2" value="装配顺序关键控制：&#10;• Tenant before Mybatis&#10;• DataRecord before Mybatis&#10;• Redis before Jwt&#10;• Jackson before Spring Jackson&#10;• Transaction HIGHEST" style="shape=note;whiteSpace=wrap;html=1;rounded=0;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=10;align=left" vertex="1" parent="1">
+          <mxGeometry x="750" y="740" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note3" value="条件装配链：&#10;@ConditionalOnClass&#10;  ↓&#10;@ConditionalOnProperty&#10;  ↓&#10;@ConditionalOnMissingBean&#10;  ↓&#10;Bean 注册 / 跳过" style="shape=note;whiteSpace=wrap;html=1;rounded=0;strokeColor=#b85682;fillColor=#f5d0e0;fontSize=10;align=left" vertex="1" parent="1">
+          <mxGeometry x="950" y="440" width="140" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
