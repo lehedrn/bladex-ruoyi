@@ -19,29 +19,45 @@
 
 Agent 数量最多为 4 个，根据项目特征按需启用（纯前端项目只需 agent-frontend，纯后端只需 agent-backend 等）。每个 Agent 的**内部子任务数量动态决定**，不写死 subagent 表。
 
+> **Agent 调用注意**：每次调用 Agent 工具时，`description` 参数为**必填项**，遗漏会导致启动失败。每个 Agent 的 description 应简要描述该 Agent 的分析目标（如"分析 BladeX 底层架构：Starter/自动配置/基础设施"）。
+
 ---
 
 ## 阶段划分与依赖关系
 
 ```
-Phase 1（并行，按需启用）:
-  agent-architecture  → 分析 Starter/自动配置/基础设施（如需要）
-  agent-backend       → 分析 Controller/Service/Mapper 业务层（如需要）
-  agent-frontend      → 分析组件/路由/状态/API（如需要）
-  ↳ 信息同步点：agent-backend 汇总 subagent 结果时，可选读取 agent-architecture 的中间输出，
-    了解全局 Filter 链、异常拦截器、Token 处理等基础设施行为，补充到后端分析报告中
+Phase 1（并行启动，部分依赖）:
+  ├── agent-architecture（无依赖，最先启动）→ 分析 Starter/自动配置/基础设施（如需要）
+  ├── agent-frontend（无依赖，与 architecture 并行启动）→ 分析组件/路由/状态/API（如需要）
+  └── agent-backend（依赖 architecture 完成，在其完成后启动）→ 分析 Controller/Service/Mapper 业务层（如需要）
+      ↳ 信息同步点：agent-backend 启动时先读取 agent-architecture 的中间输出，
+        了解全局 Filter 链、异常拦截器、Token 处理等基础设施行为，补充到后端分析报告中
 
 Phase 2（串行，依赖 Phase 1 全部完成）:
-  agent-contract      → 消费 backend + frontend 结果做接口对齐
+  └── agent-contract → 消费 backend + frontend 结果做接口对齐
 
 Phase 3（总控执行，依赖 Phase 2 完成）:
   术语汇总 + 业务规则合并 + 规则依赖图 + 最终文档生成 + 自检
 ```
 
 **依赖关系**：
+- `agent-architecture` 和 `agent-frontend` 完全并行，互不依赖
+- `agent-backend` 依赖 `agent-architecture` 完成（需读取其基础设施分析结论）
 - `agent-contract` blockedBy `agent-backend`、`agent-frontend`
 - 业务规则汇总 blockedBy `agent-architecture`、`agent-backend`、`agent-frontend`、`agent-contract`
-- `agent-backend` 完成后可选读取 `agent-architecture` 的中间输出（信息同步点），不阻塞 Phase 2
+
+**实际执行时间线**：
+```
+时间轴 →
+architecture: ━━━━[分析]━━━━┓
+frontend:     ━━━━[分析]━━━━━━━━━━━┫
+                             ┃
+backend:                    ┗━━━[读architecture报告+分析]━━━┓
+                                                          ┃
+contract:                                                  ┗━━━[接口对齐]━━━┓
+```
+
+总耗时 ≈ max(architecture, frontend) + backend分析 + contract + 汇总
 
 ---
 
@@ -51,34 +67,43 @@ Phase 3（总控执行，依赖 Phase 2 完成）:
 
 ### 第 1 步：快速扫描
 
-读取目标目录，评估：
-- **文件数量**：`.java` / `.vue` 文件总数
-- **子包/子目录数量**：一级子目录数
-- **代码行数**：粗略估算（文件数 × 平均行数）
+读取目标目录，收集以下指标：
+- **文件总数**：`.java` / `.vue` / `.ts` / `.js` 文件数
+- **业务模块数**：有独立 Controller 或 View 的模块数量
+- **最大调用链深度**（或组件嵌套深度）
 
-### 第 2 步：按维度拆分
+### 第 2 步：计算复杂度评分
 
-子模块 prompt（`_底层架构.md` / `_后端分析.md` / `_前端分析.md`）各自定义了若干分析章节。父 Agent 读取后，为每个章节分配一个 subagent：
+```
+评分 = 文件数 × 1 + 业务模块数 × 10 + 调用链深度加成
+调用链深度加成：深度 ≥ 3 层时，每深一层 × 5 分
+```
+
+### 第 3 步：按评分决定拆分策略
+
+| 评分 | 策略 |
+|------|------|
+| < 30 | 不拆 subagent，单 Agent 完成 |
+| 30 - 80 | 按子模块定义的分析维度拆分（每章一个 subagent） |
+| > 80 | 按维度拆分 + 大模块二次拆分 |
+
+### 第 4 步：二次拆分（仅评分 > 80 时）
+
+| 触发条件 | 拆分策略 |
+|---------|---------|
+| 某维度下文件数 > 30 或子包 > 3 个 | 按子包/子目录拆分，每个子包一个 subagent |
+| 某业务模块调用链深度 > 3 层 | 按调用链分段拆分 |
+| 某维度涉及多个技术面（如多个数据库、多个中间件） | 按技术面拆分 |
+
+### 维度分配表
+
+子模块 prompt 各自定义了若干分析章节。按维度拆分时参考下表：
 
 | 父 Agent | 分析维度（对应子模块章节号） |
 |---------|----------------------------|
 | agent-architecture | 第1章(入口点)、第2章(能力清单)、第3章(依赖与调用)、第4章(配置体系)、第5章(业务规则)、第6章(设计模式) |
 | agent-backend | 第1章(入口点)、第2章(调用链)、第3章(数据模型)、第4章(安全与权限)、第5章(国际化)、第6章(业务规则) |
 | agent-frontend | 第1章(入口点)、第2章(组件层级)、第3章(路由与权限)、第4章(状态管理)、第5章(API调用层)、第6章(业务规则：含提取方法A-E、隐式规则、规则依赖) |
-
-### 第 3 步：按需二次拆分
-
-若某维度代码量特别大，按子包/子目录进一步拆分：
-
-| 触发条件 | 拆分策略 |
-|---------|---------|
-| 某维度文件数 > 50 个 | 按一级子包/子目录拆分，每个子包一个 subagent |
-| 某维度涉及多个业务模块（如多个 Controller 分组） | 按业务模块拆分 |
-| 某维度涉及多个技术面（如多个数据库、多个中间件） | 按技术面拆分 |
-
-### 第 4 步：小项目不拆
-
-若目标代码文件总数 < 20 个，父 Agent 直接单 Agent 完成分析，不派 subagent。
 
 ### 并行原则
 
@@ -99,6 +124,41 @@ Phase 3（总控执行，依赖 Phase 2 完成）:
 | subagent（动态拆分） | `sonnet` | 子任务分析 |
 
 > **规则**：所有 Agent 创建时必须显式指定 `model: sonnet`，禁止使用其他模型。
+
+### 权限配置
+
+所有 Agent（包括父 Agent 和 subagent）创建时指定 `mode: "acceptEdits"`，自动允许文件读取/写入/编辑操作，避免高频权限弹窗阻塞执行。
+
+```
+Agent({
+  description: "...",
+  subagent_type: "general-purpose",
+  model: "sonnet",
+  mode: "acceptEdits",    // 必填，自动允许文件操作
+  prompt: "...",
+  run_in_background: true
+})
+```
+
+### 操作范围约束
+
+每个 Agent 只能操作以下目录，超出范围需向总控报告，不得自行操作：
+
+| 操作类型 | 允许范围 |
+|---------|---------|
+| 读取 | `sources/` 下全部文件 |
+| 写入 | `{输出目录}/` 下对应模块子目录（如 `diagrams/backend/`、`analysis-tmp/backend/`） |
+| Bash | 代码搜索（`find`/`grep`）、文件统计（`wc`/`ls`）、drawio 导出命令 |
+
+### 禁止操作
+
+所有 Agent 禁止执行以下操作：
+
+- ❌ 删除任何文件（`rm`、`git rm` 等）
+- ❌ 修改 `sources/` 下的文件（只读）
+- ❌ 执行网络请求（`curl`、`wget`、`npm install` 等）
+- ❌ 安装/卸载软件包、修改系统配置
+- ❌ 推送代码到远程仓库（`git push`）
 
 ---
 
@@ -207,14 +267,18 @@ Phase 3（总控执行，依赖 Phase 2 完成）:
 
 总控按 `系统分析.md` 第 0 章判断需要启用哪些 Agent。
 
-### Step 2：派发 Phase 1 Agent（并行）
+### Step 2：派发 Phase 1 Agent（按依赖顺序）
 
-总控根据 Step 1 的判断，并行派发需要启用的 Agent：
+总控根据 Step 1 的判断，按依赖顺序派发 Agent：
 
 ```
+# 无依赖的 Agent 并行启动
 启动 agent-architecture（如需）→ run_in_background
-启动 agent-backend（如需）       → run_in_background
-启动 agent-frontend（如需）      → run_in_background
+启动 agent-frontend（如需）    → run_in_background
+等待 agent-architecture 完成   # agent-backend 需要读取其结果
+
+# agent-backend 依赖 architecture 完成后启动
+启动 agent-backend（如需）     → run_in_background
 等待全部完成
 ```
 
@@ -238,6 +302,7 @@ Phase 2 完成后，总控按以下步骤执行：
    - 各 Agent 分析报告中的图表（`.drawio` + `.svg`）直接引用，不再重新生成
    - 总控负责生成跨模块的全局图表（如架构全景图、完整调用链路图）
    - 03 号文档按本文件底部"03 号文档组合规则"拼接
+   - 接口契约 Agent 直接消费 Phase 1 报告中的"接口清单"章节，无需重新提取
 5. **执行自检清单**：自洽性、可读性、与需求一致性、待澄清问题清单
 
 ---
